@@ -53,6 +53,7 @@ function App() {
           case "auth/invalid-email":
             setEmailError(err.message);
             break;
+            // FIXME: error msg doesn't display, might also have to fix sign in error msg
           case "auth/weak-password":
             setPasswordError(err.message);
             break;
