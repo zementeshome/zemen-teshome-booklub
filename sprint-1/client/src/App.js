@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import Login from './components/Login/Login';
-import Header from './components/Header/Header';
+// import Login from './components/Login/Login';
+// import Header from './components/Header/Header';
+import Form from './components/Form/Form';
 import fire from './fire';
 
 function App() {
@@ -82,11 +83,12 @@ function App() {
 
   return (
     <div className="App">
-      {user ? (
+      <Form />
+      {/* {user ? (
         <Header handleLogout={handleLogout}/>
       ) : (
         <Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignUp={handleSignUp} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwwordError={passwordError}/>
-      )}
+      )} */}
     </div>
   );
 }
