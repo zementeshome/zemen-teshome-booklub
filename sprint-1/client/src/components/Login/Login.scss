@@ -10,6 +10,8 @@ html, body {
     overflow-x: hidden; 
     font-family: 'Roboto';   
     font-size: 14px;
+    // background-image: linear-gradient(white, white, black);
+
 }
 
 .login {
@@ -73,7 +75,7 @@ html, body {
     &__button-container {
         
     }
-
+    //FIXME: margin-right moves close to tablet
     &__button-div,
     &__signup-container {
         @include mobile {
