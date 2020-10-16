@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.scss';
 
 function Header({handleLogout}) {
+
     return (
        <section className="header">
            <nav className="header__nav">

@@ -1,13 +1,16 @@
 import React, { useState, useEffect } from 'react';
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import './App.css';
 // import Login from './components/Login/Login';
-// import Header from './components/Header/Header';
+// import Home from './components/Home/Home';
 import Form from './components/Form/Form';
 import fire from './fire';
 
 function App() {
 
   const [user, setUser] = useState('');
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState ('');
   const [emailError, setEmailError] = useState ('');
@@ -17,11 +20,15 @@ function App() {
   const clearInput = () => {
     setEmail('');
     setPassword('');
+    setFirstName('');
+    setLastName('')
   }
 
   const clearErrors = () => {
     setEmailError('');
     setPasswordError('');
+    setFirstName('');
+    setLastName('')
   }
 
   const handleLogin = () => {
@@ -43,6 +50,10 @@ function App() {
       });
   };
 
+  const handleLogout = () => {
+    fire.auth().signOut();
+  };
+
   const handleSignUp = () => {
     clearErrors();
     fire
@@ -62,10 +73,6 @@ function App() {
       });
   };
 
-  const handleLogout = () => {
-    fire.auth().signOut();
-  };
-
   const authorizeListener = () => {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
@@ -82,14 +89,18 @@ function App() {
   }, []);
 
   return (
+    <Router>
+      <Switch>
     <div className="App">
       <Form />
       {/* {user ? (
-        <Header handleLogout={handleLogout}/>
+        <Home handleLogout={handleLogout}/>
       ) : (
-        <Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignUp={handleSignUp} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwwordError={passwordError}/>
+        <Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignUp={handleSignUp} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwwordError={passwordError} firstName={firstName} setFirstName={setFirstName} lastName={lastName} setLastName={setLastName}/>
       )} */}
     </div>
+    </Switch>
+    </Router>
   );
 }
 

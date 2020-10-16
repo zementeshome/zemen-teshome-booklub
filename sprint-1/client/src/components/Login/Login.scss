@@ -28,7 +28,7 @@ html, body {
         display: flex;
         flex-direction: column;
         justify-content: center;
-        margin: 35% 10vw;
+        margin: 30% 10vw;
         }
     }
 
@@ -36,7 +36,7 @@ html, body {
         @include mobile {
             display: flex;
             justify-content: flex-start;
-            margin-bottom: 5px;
+            margin-bottom: 7px;
         }
     }
 
@@ -44,7 +44,7 @@ html, body {
         @include mobile {
             width: 96%;
             height: 25px;
-            margin-bottom: -2rem;
+            margin-bottom: 0.5rem;
             border-radius: 5px;
             border: 1px solid black;
         }
@@ -58,7 +58,7 @@ html, body {
     &__error {
         color: red;
         font-size: 12px;
-        margin-top: 2rem;
+        margin-top: -0.5rem;
         display: flex;
         justify-content: flex-start;
     }
