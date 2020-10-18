@@ -15,7 +15,7 @@ function Login(props) {
                 <img className="login__logo"src={process.env.PUBLIC_URL + '/assets/logo1.svg'} alt="booklub logo"/>
                     <div className="login__button-container">
                         {hasAccount ? (
-                            <>
+                             <form className="login__form-signIn">
                              <label className="login__label">username</label>
                             <input className="login__input" type="text" autofocus required value={email} onChange={(e) => setEmail(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
                             <p className="login__error">{emailError}</p>
@@ -28,9 +28,9 @@ function Login(props) {
                              <div className="login__signup-container">
                              <p className="login__sign-up">don't have an account?<span onClick={() => setHasAccount(!hasAccount)}>sign up</span></p>
                              </div>
-                            </>
+                             </form>
                         ) : ( 
-                            <>
+                            <form className="login__form-signUp">
                                 <label className="login__label">first name</label>
                         <input className="login__input" type="text" autofocus required value={firstName} onChange={(e) => setFirstName(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
                         <label className="login__label">last name</label>
@@ -49,7 +49,7 @@ function Login(props) {
                             <div className="login__signup-container">
                             <p className="login__sign-in">have an account?<span onClick={() => setHasAccount(!hasAccount)}>sign in</span></p>
                             </div>
-                        </>     
+                        </form>
                         )}
                     </div>
                 </div>

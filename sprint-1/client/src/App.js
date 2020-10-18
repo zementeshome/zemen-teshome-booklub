@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {BrowserRouter as Router, Switch, Route, Link, useHistory} from "react-router-dom";
 import './App.css';
-// import Login from './components/Login/Login';
-// import Home from './components/Home/Home';
-import Form from './components/Form/Form';
+import Login from './components/Login/Login';
+import Home from './components/Home/Home';
+// import Form from './components/Form/Form';
 import fire from './fire';
 
 function App() {
@@ -59,6 +59,10 @@ function App() {
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
+      .then( (userInfo) => {
+        const history = useHistory
+        history.push('/Form')
+      })
       .catch(err => {
         switch (err.code) {
           case "auth/email-already-in-use":
@@ -92,16 +96,19 @@ function App() {
     <Router>
       <Switch>
     <div className="App">
-      <Form />
-      {/* {user ? (
+      {/* <Form />
+      <Home/> */}
+      {user ? (
         <Home handleLogout={handleLogout}/>
       ) : (
         <Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignUp={handleSignUp} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwwordError={passwordError} firstName={firstName} setFirstName={setFirstName} lastName={lastName} setLastName={setLastName}/>
-      )} */}
+       )}}
     </div>
     </Switch>
     </Router>
   );
 }
+
+// define routes 
 
 export default App;

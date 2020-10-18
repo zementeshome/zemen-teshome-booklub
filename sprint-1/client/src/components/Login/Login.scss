@@ -42,7 +42,7 @@ html, body {
 
     &__input {
         @include mobile {
-            width: 96%;
+            width: 98%;
             height: 25px;
             margin-bottom: 0.5rem;
             border-radius: 5px;
@@ -72,16 +72,14 @@ html, body {
             transition: all 400ms ease-in-out;
         }
     }
-    &__button-container {
-        
-    }
+    
     //FIXME: margin-right moves close to tablet
     &__button-div,
     &__signup-container {
         @include mobile {
             display: flex;
             justify-content: flex-end;
-            margin-right: 1.5vw;
+            margin-right: 0.5vw;
         }
     }
 
@@ -89,7 +87,7 @@ html, body {
 
     &__button {
         @include mobile {
-            width: 50%;
+            width: 53%;
             margin-top: 1rem;
             height: 30px;
             border: 1px solid black;
