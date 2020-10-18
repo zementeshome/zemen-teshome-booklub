@@ -2,6 +2,21 @@ import React from 'react'
 import './Form.scss';
 
 class Form extends React.Component {
+
+    state = {
+        value: ''
+    };
+
+    onChange = (e) => {
+        this.setState({
+            value: e.target.value
+        })
+    }
+
+    handleSubmit = (e) => {
+        e.preventDefault()
+    }
+
     render() {
         return (
             <section className="form">
@@ -11,48 +26,84 @@ class Form extends React.Component {
                     <img className="form__welcome-logo" src={process.env.PUBLIC_URL + '/assets/logo2.svg'} alt="booklub logo"/>
                 </div> */}
                 <p className="form__info">please fill out the form below so we can get to know you a little better.</p>
-                <form action="form__container">
+                <form onSubmit={this.handleSubmit} name="form__container" action="" method="GET">
                 <p className="form__subheading">how many hours a week to do you spend reading?</p>
-                <input className="form__input" type="radio" name="zero" value="zero"/>
-                <label className="form__label" for="zero">0</label><br />
-                <input className="form__input" type="radio" name="one" value="one"/>
-                <label className="form__label" for="one">1-5</label><br />
-                <input className="form__input" type="radio" name="six" value="six"/>
-                <label className="form__label" for="six">6-10</label><br />
-                <input className="form__input" type="radio" name="eleven" value="eleven"/>
-                <label className="form__label" for="eleven">11-15</label><br />
-                <input className="form__input" type="radio" name="fifteenPlus" value="fifteenPlus"/>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="radAnswer" value="" onChange={this.onChange}/>
+                <label className="form__label" for="zero">0</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="radAnswer" value=""/>
+                <label className="form__label" for="one">1-5</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="radAnswer" value=""/>
+                <label className="form__label" for="six">6-10</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="radAnswer" value=""/>
+                <label className="form__label" for="eleven">11-15</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="radAnswer2" value=""/>
                 <label className="form__label" for="fifteenPlus">15+</label>
+                </div>
                 <p className="form__subheading">what are you looking for?</p>
-                <input className="form__input" type="radio" name="getInto" value="getInto"/>
-                <label className="form__label" for="getInto">to get into reading</label><br />
-                <input className="form__input" type="radio" name="readMore" value="readMore"/>
-                <label className="form__label" for="readMore">to read more</label><br />
-                <input className="form__input" type="radio" name="meet" value="meet"/>
-                <label className="form__label" for="meet">to meet new people</label><br />
-                <p className="form__subheading">choose three genres you like/are interested in</p>
-                <input className="form__input" type="radio" name="horror" value="horror"/>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="radAnswer2" value=""/>
+                <label className="form__label" for="getInto">to get into reading</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="radAnswer2" value=""/>
+                <label className="form__label" for="readMore">to read more</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="radAnswer2" value=""/>
+                <label className="form__label" for="meet">to meet new people</label>
+                </div>
+                <p className="form__subheading">choose three genres you're interested in</p>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="horror" value=""/>
                 <label className="form__label" for="horror">horror</label><br />
-                <input className="form__input" type="radio" name="scienceFiction" value="scienceFiction"/>
-                <label className="form__label" for="scienceFiction">science fiction</label> <br />
-                <input className="form__input" type="radio" name="history" value="history"/>
-                <label className="form__label" for="history">history</label> <br />
-                <input className="form__input" type="radio" name="selfHelp" value="selfHelp"/>
-                <label className="form__label" for="selfHelp">self-help</label> <br />
-                <input className="form__input" type="radio" name="politics" value="politics"/>
-                <label className="form__label" for="politics">politics</label> <br />
-                <input className="form__input" type="radio" name="literaryFiction" value="literaryFiction"/>
-                <label className="form__label" for="literaryFiction">literary fiction</label> <br />
-                <input className="form__input" type="radio" name="satire" value="satire"/>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="scienceFiction" value=""/>
+                <label className="form__label" for="scienceFiction">science fiction</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="history" value=""/>
+                <label className="form__label" for="history">history</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="selfHelp" value=""/>
+                <label className="form__label" for="selfHelp">self-help</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="politics" value=""/>
+                <label className="form__label" for="politics">politics</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="" value="literaryFiction"/>
+                <label className="form__label" for="literaryFiction">literary fiction</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="satire" value=""/>
                 <label className="form__label" for="satire">satire</label> <br />
-                <input className="form__input" type="radio" name="philosophy" value="philosophy"/>
-                <label className="form__label" for="philosophy">philosophy</label> <br />
-                <input className="form__input" type="radio" name="graphic" value="graphic"/>
-                <label className="form__label" for="graphic">graphic novels/comic books</label> <br />
-                <input className="form__input" type="radio" name="art" value="art"/>
-                <label className="form__label" for="art">art/architecture</label>  <br />
-                <p className="form__subheading">let us know who your favourite authors are (if you don't have any please type n/a)</p>
-                <input className="form__input-authors" type="text"/>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="philosophy" value=""/>
+                <label className="form__label" for="philosophy">philosophy</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="graphic" value=""/>
+                <label className="form__label" for="graphic">graphic novels/comic books</label>
+                </div>
+                <div className="form__box">
+                <input className="form__input" type="radio" name="art" value=""/>
+                <label className="form__label" for="art">art/architecture</label>
+                </div>
+                <p className="form__subheading">let us know who some of your favourite authors are</p>
+                <input className="form__input-authors" type="text" value="" required placeholder="if you don't have any please type n/a"/>
                 <button className="form__button" type="submit">submit</button>
                 </form>     
             </section>

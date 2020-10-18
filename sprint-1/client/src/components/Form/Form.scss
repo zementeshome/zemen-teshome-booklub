@@ -28,9 +28,57 @@
         }
     }
 
-    &__label {
+    &__container {
         @include mobile {
-          align-items: left;
+            display: inline-flex;
+            flex-direction: row-reverse;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+    }
+
+    &__label,
+    &__input {
+        @include mobile {
+            margin: 0;
+        }
+    }
+
+    &__input {
+        width: 20px;
+    }
+
+    &__label {
+        width: calc(100% - 20px);
+    }
+
+//    &__label {
+//        @include mobile {
+//         height: 100%;
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+//        }
+//    }
+
+
+    // &__label {
+    //     @include mobile {
+    //         display: block;
+    //     }
+    // }
+
+    // &__input {
+    //     @include mobile {
+    //         display: block;
+            
+    //     }
+    // }
+
+    &__input-authors {
+        @include mobile {
+            width: 100%;
+            height: 50px;
         }
     }
 
