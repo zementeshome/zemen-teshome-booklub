@@ -1,15 +1,21 @@
 import React from 'react';
 import './Login.scss';
-import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import Form from '../Form/Form';
 
 function Login(props) {
 
-    const { email, setEmail, password, setPassword, handleLogin, handleSignUp, hasAccount, setHasAccount, emailError, passwordError, setFirstName, setLastName, lastName, firstName } = props;
+    const { email, setEmail, password, setPassword, handleLogin, handleSignUp, hasAccount, setHasAccount, emailError, passwordError, setFirstName, setLastName, lastName, firstName} = props;
+
+    // let history = useHistory();
+
+    // const redirect = () => {
+    // history.push('/form')
+//   }
 
     return (
         
-        <div>
+        <div className="app">
             <section className="login">
                 <div className="login__container">
                 <img className="login__logo"src={process.env.PUBLIC_URL + '/assets/logo1.svg'} alt="booklub logo"/>

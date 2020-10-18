@@ -3,7 +3,8 @@ import {BrowserRouter as Router, Switch, Route, Link, useHistory} from "react-ro
 import './App.css';
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
-// import Form from './components/Form/Form';
+import Form from './components/Form/Form';
+import Klub from './components/Klub/Klub';
 import fire from './fire';
 
 function App() {
@@ -59,10 +60,12 @@ function App() {
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then( (userInfo) => {
-        const history = useHistory
-        history.push('/Form')
-      })
+      // .then((userInfo) => {
+      //   const history = useHistory();
+      //   const redirect = () => {
+      //     history.push('/form')
+      //   }
+      // })
       .catch(err => {
         switch (err.code) {
           case "auth/email-already-in-use":
@@ -88,6 +91,7 @@ function App() {
     });
   };
 
+
   useEffect(() => {
     authorizeListener();
   }, []);
@@ -95,15 +99,20 @@ function App() {
   return (
     <Router>
       <Switch>
-    <div className="App">
       {/* <Form />
       <Home/> */}
+       {/* <Route exact path="/"><Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignUp={handleSignUp} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwwordError={passwordError} firstName={firstName} setFirstName={setFirstName} lastName={lastName} setLastName={setLastName}/></Route>
+       <Route path="/home" component={Home}></Route>
+      <Route path="/form" component={Form}></Route>
+      <Route path="/klub" component={Klub}></Route> */}
       {user ? (
         <Home handleLogout={handleLogout}/>
       ) : (
+      //   // <Form handleLogout={handleLogout}/>
+      // )}
+      // ) : (
         <Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignUp={handleSignUp} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwwordError={passwordError} firstName={firstName} setFirstName={setFirstName} lastName={lastName} setLastName={setLastName}/>
-       )}}
-    </div>
+       )}
     </Switch>
     </Router>
   );

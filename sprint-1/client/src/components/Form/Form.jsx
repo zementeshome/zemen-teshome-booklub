@@ -1,6 +1,8 @@
 import React from 'react'
 import './Form.scss';
 import { db } from '../../fire';
+import fire from '../../fire';
+// import Header from '../Header/Header';
 
 class Form extends React.Component {
 
@@ -57,6 +59,10 @@ class Form extends React.Component {
         // console.log(this.state)
     }
 
+    handleLogout = () => {
+        fire.auth().signOut()
+      };
+
     // useEffect(() => {
     //     db.collection('booklub-users').onSnapshot
     // }, []);
@@ -65,6 +71,7 @@ class Form extends React.Component {
         return (
             <section className="form">
                 <h1 className="form__header">welcome</h1>
+                <button className="form__logout" onClick={this.handleLogout}>logout</button>
                 <p className="form__info">please fill out the form below so we can get to know you a little better.</p>
                 <form onSubmit={this.handleSubmit} name="form__container" action="" method="GET">
                 <input className="form__user" value={this.state.userId} type="text" name="userId" onChange={ (e) => this.setState({userId: e.target.value})}></input>
