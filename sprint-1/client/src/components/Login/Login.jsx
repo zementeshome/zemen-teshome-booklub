@@ -1,17 +1,9 @@
 import React from 'react';
 import './Login.scss';
-import { useHistory } from 'react-router-dom';
-import Form from '../Form/Form';
 
 function Login(props) {
 
     const { email, setEmail, password, setPassword, handleLogin, handleSignUp, hasAccount, setHasAccount, emailError, passwordError, setFirstName, setLastName, lastName, firstName} = props;
-
-    // let history = useHistory();
-
-    // const redirect = () => {
-    // history.push('/form')
-//   }
 
     return (
         
@@ -48,9 +40,7 @@ function Login(props) {
                         <input className="login__input" type="password" required value={password}onChange={(e) => setPassword(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
                     <p className="login__error">{passwordError}</p>
                              <div className="login__button-div">
-                            {/* <Link to={ new Form}> */}
                                 <button className="login__button" onClick={handleSignUp}>sign up</button>
-                                {/* </Link> */}
                             </div>
                             <div className="login__signup-container">
                             <p className="login__sign-in">have an account?<span onClick={() => setHasAccount(!hasAccount)}>sign in</span></p>

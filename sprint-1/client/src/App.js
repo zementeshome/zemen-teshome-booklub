@@ -5,6 +5,7 @@ import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import Form from './components/Form/Form';
 import Klub from './components/Klub/Klub';
+import About from './components/About/About';
 import fire from './fire';
 
 function App() {
@@ -38,6 +39,11 @@ function App() {
     fire
       .auth()
       .signInWithEmailAndPassword(email, password)
+      .then((userInfo) => {
+        // console.log('successful login');
+      window.location.href = window.location.href.replace('3000/','3000/home');
+          // history.push('/form')
+      })
       .catch(err => {
         switch(err.code) {
           case "auth/invalid-email":
@@ -52,11 +58,7 @@ function App() {
       });
   };
 
-  const handleLogout = () => {
-    fire.auth().signOut();
-  };
-
-  const history = useHistory();
+  // const history = useHistory();
 
   const handleSignUp = () => {
     clearErrors();
@@ -64,8 +66,8 @@ function App() {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((userInfo) => {
-        console.log('successful login');
-window.location.href = window.location.href.replace('3000/','3000/form');
+        // console.log('successful login');
+      window.location.href = window.location.href.replace('3000/','3000/form');
           // history.push('/form')
       })
       .catch(err => {
@@ -104,9 +106,10 @@ window.location.href = window.location.href.replace('3000/','3000/form');
       {/* <Form /> */}
       {/* <Home/> */}
         <Route path="/form" component={Form}></Route>
+        <Route path="/home" component={Home}></Route>
        <Route exact path="/"><Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignUp={handleSignUp} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwwordError={passwordError} firstName={firstName} setFirstName={setFirstName} lastName={lastName} setLastName={setLastName}/></Route>
-       <Route path="/home" component={Home}></Route>
       <Route path="/klub" component={Klub}></Route>
+      <Route path="/about" component={About}></Route>
       {/* {user ? (
         // <Form/>
         // <Home handleLogout={handleLogout}/>

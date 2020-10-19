@@ -12,8 +12,13 @@ class Form extends React.Component {
         purpose: '',
         genres: [],
         authors: '',
-        fullName: ''
+        firstName: ''
     };
+
+    // goToHome = (e) => {
+    //     e.preventDefault();
+    //     this.props.history.push('/home');
+    // }
 
     onChange = (e) => {
         this.setState({
@@ -53,7 +58,7 @@ class Form extends React.Component {
     }
 
     handleSubmit = (e) => {
-        e.preventDefault()
+        e.preventDefault();
         console.log(fire.auth().currentUser)
         this.setState({
             ...this.state,
@@ -62,6 +67,7 @@ class Form extends React.Component {
         db.collection('booklub-users').add(this.state).then(() => {
         this.addUserToKlub()
         })
+        this.props.history.push('/home');
         // console.log(this.state)
     }
 
@@ -86,24 +92,18 @@ class Form extends React.Component {
         }); 
     }
 
-
-
-    handleLogout = () => {
-        fire.auth().signOut()
-      };
-
-    // useEffect(() => {
-    //     db.collection('booklub-users').onSnapshot
-    // }, []);
+    // handleLogout = () => {
+    //     fire.auth().signOut()
+    //   };
 
     render() {
         return (
             <section className="form">
                 <h1 className="form__header">welcome</h1>
-                <button className="form__logout" onClick={this.handleLogout}>logout</button>
+                {/* <button className="form__logout" onClick={this.handleLogout}>logout</button> */}
                 <p className="form__info">please fill out the form below so we can get to know you a little better.</p>
                 <form onSubmit={this.handleSubmit} name="form__container" action="" method="GET">
-                <input className="form__user" value={this.state.fullName} type="text" name="fullName" onChange={(e) => this.setState({fullName: e.target.value})}/>
+                <input className="form__user" value={this.state.firstName} type="text" name="fullName" required placeholder="your first name" style={{fontFamily: 'Roboto', fontSize: '13px'}} onChange={(e) => this.setState({firstName: e.target.value})}/>
                 <p className="form__subheading">how many hours a week to do you spend reading?</p>
                 <div className="form__box">
                 <input className="form__input" type="radio" name="radAnswer" value="0" onChange={this.onChange}/>
