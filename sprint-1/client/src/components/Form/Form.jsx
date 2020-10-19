@@ -7,11 +7,12 @@ import fire from '../../fire';
 class Form extends React.Component {
 
     state = {
-        authors: '',
-        genres: [],
+        userId: '',
         hours: '',
         purpose: '',
-        userId: ''
+        genres: [],
+        authors: '',
+        fullName: ''
     };
 
     onChange = (e) => {
@@ -53,11 +54,39 @@ class Form extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault()
+        console.log(fire.auth().currentUser)
+        this.setState({
+            ...this.state,
+            userId: fire.auth().currentUser.email
+        })
         db.collection('booklub-users').add(this.state).then(() => {
-
+        this.addUserToKlub()
         })
         // console.log(this.state)
     }
+
+    addUserToKlub = () => {
+        let klubs = [];
+        db.collection('klubs').where("genres", "array-contains-any", this.state.genres).get().then((querySnapshot) => {
+            querySnapshot.forEach((doc) => {
+                // doc.data() is never undefined for query doc snapshots
+                klubs.push({id: doc.id, data: doc.data()});
+            });
+            console.log(klubs);
+            if (klubs && klubs.length > 0) {
+                let minUsers = klubs[0].data.users?.length || 0
+                let klubIndex = 0
+                klubs.forEach((value, index) => {
+                    if (value.data.users?.length < minUsers) {
+                        klubIndex = index
+                    }
+                })
+                db.collection('klubs').doc(klubs[klubIndex].id).update({users: klubs[klubIndex].users?[...klubs[klubIndex].users, this.state.fullName] : [this.state.fullName]})
+            }
+        }); 
+    }
+
+
 
     handleLogout = () => {
         fire.auth().signOut()
@@ -74,7 +103,7 @@ class Form extends React.Component {
                 <button className="form__logout" onClick={this.handleLogout}>logout</button>
                 <p className="form__info">please fill out the form below so we can get to know you a little better.</p>
                 <form onSubmit={this.handleSubmit} name="form__container" action="" method="GET">
-                <input className="form__user" value={this.state.userId} type="text" name="userId" onChange={ (e) => this.setState({userId: e.target.value})}></input>
+                <input className="form__user" value={this.state.fullName} type="text" name="fullName" onChange={(e) => this.setState({fullName: e.target.value})}/>
                 <p className="form__subheading">how many hours a week to do you spend reading?</p>
                 <div className="form__box">
                 <input className="form__input" type="radio" name="radAnswer" value="0" onChange={this.onChange}/>

@@ -33,6 +33,7 @@ function App() {
   }
 
   const handleLogin = () => {
+    console.log(fire.auth().l)
     clearErrors();
     fire
       .auth()
@@ -55,17 +56,18 @@ function App() {
     fire.auth().signOut();
   };
 
+  const history = useHistory();
+
   const handleSignUp = () => {
     clearErrors();
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      // .then((userInfo) => {
-      //   const history = useHistory();
-      //   const redirect = () => {
-      //     history.push('/form')
-      //   }
-      // })
+      .then((userInfo) => {
+        console.log('successful login');
+window.location.href = window.location.href.replace('3000/','3000/form');
+          // history.push('/form')
+      })
       .catch(err => {
         switch (err.code) {
           case "auth/email-already-in-use":
@@ -99,20 +101,21 @@ function App() {
   return (
     <Router>
       <Switch>
-      {/* <Form />
-      <Home/> */}
-       {/* <Route exact path="/"><Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignUp={handleSignUp} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwwordError={passwordError} firstName={firstName} setFirstName={setFirstName} lastName={lastName} setLastName={setLastName}/></Route>
+      {/* <Form /> */}
+      {/* <Home/> */}
+        <Route path="/form" component={Form}></Route>
+       <Route exact path="/"><Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignUp={handleSignUp} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwwordError={passwordError} firstName={firstName} setFirstName={setFirstName} lastName={lastName} setLastName={setLastName}/></Route>
        <Route path="/home" component={Home}></Route>
-      <Route path="/form" component={Form}></Route>
-      <Route path="/klub" component={Klub}></Route> */}
-      {user ? (
-        <Home handleLogout={handleLogout}/>
+      <Route path="/klub" component={Klub}></Route>
+      {/* {user ? (
+        // <Form/>
+        // <Home handleLogout={handleLogout}/>
       ) : (
       //   // <Form handleLogout={handleLogout}/>
       // )}
       // ) : (
         <Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignUp={handleSignUp} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwwordError={passwordError} firstName={firstName} setFirstName={setFirstName} lastName={lastName} setLastName={setLastName}/>
-       )}
+       )} */}
     </Switch>
     </Router>
   );
