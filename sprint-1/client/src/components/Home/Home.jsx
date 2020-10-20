@@ -6,7 +6,7 @@ import axios from 'axios';
 
 class Home extends Component { 
     state = {users: [], loggedInUserData: undefined}
-    loggedInUser = 'zemen@live.ca'
+    loggedInUser = '';
     handleLogout = () => {
         fire.auth().signOut();
       };

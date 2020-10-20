@@ -1,5 +1,6 @@
 import React from 'react';
 import './Login.scss';
+// import { Link } from 'react-router-dom';
 
 function Login(props) {
 
@@ -15,7 +16,7 @@ function Login(props) {
                         {hasAccount ? (
                              <form className="login__form-signIn">
                              <label className="login__label">username</label>
-                            <input className="login__input" type="text" autofocus required value={email} onChange={(e) => setEmail(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
+                            <input className="login__input" type="text" autoFocus required value={email} onChange={(e) => setEmail(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
                             <p className="login__error">{emailError}</p>
                             <label className="login__label">password</label>
                             <input className="login__input" type="password" required value={password}onChange={(e) => setPassword(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
@@ -30,11 +31,11 @@ function Login(props) {
                         ) : ( 
                             <form className="login__form-signUp">
                                 <label className="login__label">first name</label>
-                        <input className="login__input" type="text" autofocus required value={firstName} onChange={(e) => setFirstName(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
+                        <input className="login__input" type="text" autoFocus required value={firstName} onChange={(e) => setFirstName(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
                         <label className="login__label">last name</label>
-                        <input className="login__input" type="text" autofocus required value={lastName} onChange={(e) => setLastName(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
+                        <input className="login__input" type="text" autoFocus required value={lastName} onChange={(e) => setLastName(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
                         <label className="login__label">username (email)</label>
-                        <input className="login__input" type="text" autofocus required value={email} onChange={(e) => setEmail(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
+                        <input className="login__input" type="text" autoFocus required value={email} onChange={(e) => setEmail(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
                         <p className="login__error">{emailError}</p>
                         <label className="login__label">password</label>
                         <input className="login__input" type="password" required value={password}onChange={(e) => setPassword(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>

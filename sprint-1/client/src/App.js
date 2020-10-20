@@ -32,19 +32,19 @@ function App() {
     setFirstName('');
     setLastName('')
   }
+ const history = useHistory();
 
   const handleLogin = () => {
-    console.log(fire.auth().l)
+    // console.log(fire.auth())
     clearErrors();
     fire
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then((userInfo) => {
-        // console.log('successful login');
-      window.location.href = window.location.href.replace('3000/','3000/home');
-          // history.push('/form')
+      .then(() => {
+        // window.location.href = window.location.href.replace('3000/','3000/home');
+        history.push('/home');
       })
-      .catch(err => {
+      .catch((err) => {
         switch(err.code) {
           case "auth/invalid-email":
           case "auth/user-disabled":
@@ -58,8 +58,6 @@ function App() {
       });
   };
 
-  // const history = useHistory();
-
   const handleSignUp = () => {
     clearErrors();
     fire
@@ -70,7 +68,7 @@ function App() {
       window.location.href = window.location.href.replace('3000/','3000/form');
           // history.push('/form')
       })
-      .catch(err => {
+      .catch((err) => {
         switch (err.code) {
           case "auth/email-already-in-use":
           case "auth/invalid-email":
@@ -103,11 +101,9 @@ function App() {
   return (
     <Router>
       <Switch>
-      {/* <Form /> */}
-      {/* <Home/> */}
-        <Route path="/form" component={Form}></Route>
-        <Route path="/home" component={Home}></Route>
        <Route exact path="/"><Login email={email} setEmail={setEmail} password={password} setPassword={setPassword} handleLogin={handleLogin} handleSignUp={handleSignUp} hasAccount={hasAccount} setHasAccount={setHasAccount} emailError={emailError} passwwordError={passwordError} firstName={firstName} setFirstName={setFirstName} lastName={lastName} setLastName={setLastName}/></Route>
+       <Route path="/home" component={Home}></Route>
+       <Route path="/form" component={Form}></Route>
       <Route path="/klub" component={Klub}></Route>
       <Route path="/about" component={About}></Route>
       {/* {user ? (

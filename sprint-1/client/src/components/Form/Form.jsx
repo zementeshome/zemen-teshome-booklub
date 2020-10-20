@@ -12,13 +12,8 @@ class Form extends React.Component {
         purpose: '',
         genres: [],
         authors: '',
-        firstName: ''
+        fullName: ''
     };
-
-    // goToHome = (e) => {
-    //     e.preventDefault();
-    //     this.props.history.push('/home');
-    // }
 
     onChange = (e) => {
         this.setState({
@@ -103,7 +98,7 @@ class Form extends React.Component {
                 {/* <button className="form__logout" onClick={this.handleLogout}>logout</button> */}
                 <p className="form__info">please fill out the form below so we can get to know you a little better.</p>
                 <form onSubmit={this.handleSubmit} name="form__container" action="" method="GET">
-                <input className="form__user" value={this.state.firstName} type="text" name="fullName" required placeholder="your first name" style={{fontFamily: 'Roboto', fontSize: '13px'}} onChange={(e) => this.setState({firstName: e.target.value})}/>
+                <input className="form__user" value={this.state.fullName} type="text" name="fullName" required placeholder="your first name" style={{fontFamily: 'Roboto', fontSize: '13px'}} onChange={(e) => this.setState({fullName: e.target.value})}/>
                 <p className="form__subheading">how many hours a week to do you spend reading?</p>
                 <div className="form__box">
                 <input className="form__input" type="radio" name="radAnswer" value="0" onChange={this.onChange}/>

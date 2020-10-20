@@ -4,6 +4,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+// const store = createStore(rootReducer,
+//   compose(
+//     applyMiddleWare(thunk.withExtraArgument( { getFirebase, getFirestore }
+//     )),
+//     reduxFirestore(fbConfig),
+//     reactReduxFirebase(fbConfig, {useFirestoreForProfile: true, attachAuthIsReady: true})
+//   )
+//   )
+
 ReactDOM.render(
   <React.StrictMode>
     <App />
