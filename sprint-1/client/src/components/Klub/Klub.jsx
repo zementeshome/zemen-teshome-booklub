@@ -1,6 +1,8 @@
 import React from 'react'
 import { db } from '../../fire'
+import { Link } from 'react-router-dom';
 import fire from '../../fire';
+import './Klub.scss';
 
 class Klub extends React.Component {
 
@@ -27,19 +29,19 @@ class Klub extends React.Component {
     //     db.collection('booklub-users').ref(fire.auth().currentUser).once('value').then(snapshot => {
     //         console.log(snapshot.val())
     //     })
-        // db.collection('booklub-users').get().then(snapshot => {
-        //     // // console.log(snapshot);
-        //     // const users = [];
-        //     if (snapshot.)
-        //     snapshot.forEach( doc => {
-        //         const data = doc.data()
-        //         users.push(data)
-        //     })
-        //     this.setState({
-        //         users: users
-        //     })
-        // })
-    }
+    //     db.collection('booklub-users').get().then(snapshot => {
+    //         // // console.log(snapshot);
+    //         // const users = [];
+    //         // if (snapshot.)
+    //         // snapshot.forEach( doc => {
+    //         //     const data = doc.data()
+    //         //     users.push(data)
+    //         })
+    //         this.setState({
+    //             users: users
+    //         })
+    //     })
+    // }
 
     // viewUser = () => {
     //     db.collection('booklub-users').get().then((snapshot) => {
@@ -54,13 +56,15 @@ class Klub extends React.Component {
     // }
     // username = () => {
     //     db.collection('booklub-users').get(this.state.fullName)
-    //     }
+    //  
+   }
 
     render() {
     return (
-        <div>
-            <h1>Hey</h1>
-        </div>
+        <section className="klub">
+            <Link to="/home"><img className="klub__logo" src={process.env.PUBLIC_URL + '/assets/logo1.svg'} alt="booklub logo"/></Link>
+            <h1>Hey {this.getCurrentUser}</h1>
+            </section>
     )
   }
 }

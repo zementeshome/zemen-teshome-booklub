@@ -1,0 +1,12 @@
+@import '../../styles/partials/variables';
+
+@import '../../styles/partials/fonts';
+
+.about {
+    
+    &__logo {
+        @include mobile {
+            width: 20%;
+        }
+    }
+}

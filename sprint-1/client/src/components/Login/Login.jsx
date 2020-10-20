@@ -1,10 +1,97 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useHistory } from "react-router-dom";
 import './Login.scss';
-// import { Link } from 'react-router-dom';
+import fire from '../../fire';
 
-function Login(props) {
+function Login() {
 
-    const { email, setEmail, password, setPassword, handleLogin, handleSignUp, hasAccount, setHasAccount, emailError, passwordError, setFirstName, setLastName, lastName, firstName} = props;
+  const [user, setUser] = useState('');
+  const [firstName, setFirstName] = useState('')
+  const [lastName, setLastName] = useState('')
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState ('');
+  const [emailError, setEmailError] = useState ('');
+  const [passwordError, setPasswordError] = useState('');
+  const [hasAccount, setHasAccount] = useState(false);
+
+  const clearInput = () => {
+    setEmail('');
+    setPassword('');
+    setFirstName('');
+    setLastName('')
+  }
+
+  const clearErrors = () => {
+    setEmailError('');
+    setPasswordError('');
+    setFirstName('');
+    setLastName('')
+  }
+  const history = useHistory();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    console.log(fire.auth().currentUser)
+    clearErrors();
+    fire
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        history.push('/home');
+      })
+      .catch((err) => {
+        switch(err.code) {
+          case "auth/invalid-email":
+          case "auth/user-disabled":
+          case "auth/user-not-found":
+            setEmailError(err.message);
+            break;
+          case "auth/wrong-password":
+            setPasswordError(err.message);
+            break;
+        }
+      });
+  };
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+    clearErrors();
+    fire
+      .auth()
+      .createUserWithEmailAndPassword(email, password)
+      .then((userInfo) => {
+        console.log('successful login');
+    //   window.location.href = window.location.href.replace('3000/','3000/form');
+          history.push('/form')
+      })
+      .catch((err) => {
+        switch (err.code) {
+          case "auth/email-already-in-use":
+          case "auth/invalid-email":
+            setEmailError(err.message);
+            break;
+            // FIXME: error msg doesn't display, might also have to fix sign in error msg
+          case "auth/weak-password":
+            setPasswordError(err.message);
+            break;
+        }
+      });
+  };
+
+  const authorizeListener = () => {
+    fire.auth().onAuthStateChanged((user) => {
+      if (user) {
+        clearInput();
+        setUser(user);
+      } else {
+        setUser('')
+      }
+    });
+  };
+
+  useEffect(() => {
+    authorizeListener();
+  }, []);
 
     return (
         
@@ -13,7 +100,7 @@ function Login(props) {
                 <div className="login__container">
                 <img className="login__logo"src={process.env.PUBLIC_URL + '/assets/logo1.svg'} alt="booklub logo"/>
                     <div className="login__button-container">
-                        {hasAccount ? (
+                        {!hasAccount ? (
                              <form className="login__form-signIn">
                              <label className="login__label">username</label>
                             <input className="login__input" type="text" autoFocus required value={email} onChange={(e) => setEmail(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
