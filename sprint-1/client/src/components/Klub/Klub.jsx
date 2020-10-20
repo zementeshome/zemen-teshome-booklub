@@ -7,23 +7,31 @@ import './Klub.scss';
 class Klub extends React.Component {
 
     state = {
-        users: '',
+        fullName: ''
     }
 
     authorizeListener = () => {
         fire.auth().onAuthStateChanged(user => {
             if (user) {
-                console.log('user is signed in')
+                {this.userId = user.uid}
             } else {
                 console.log('no user is signed in')
             }
         })
-    }
-
-    getCurrentUser = () => {
-        db.collection('booklub-users').ref(fire.auth().currentUser).once('value').then(snapshot => {
-            console.log(snapshot.val())
-    })
+    // componentDidMount() {
+    //     const booklub = fire.database().ref('booklub-users')
+    //     booklub.child(this.userId).child('fullName').once('value').then(data => {
+    //         let name = data.val();
+    //         if(data.val() !== null) {
+    //             console.log(data.val())
+    //         }
+    //         this.setState({
+    //             fullName: name
+    //         })
+    //     })
+        // db.collection('booklub-users').ref(fire.auth().currentUser).once('value').then(snapshot => {
+        //     console.log(snapshot.val())
+ 
 
     // componentDidMount() {
     //     db.collection('booklub-users').ref(fire.auth().currentUser).once('value').then(snapshot => {
@@ -63,7 +71,7 @@ class Klub extends React.Component {
     return (
         <section className="klub">
             <Link to="/home"><img className="klub__logo" src={process.env.PUBLIC_URL + '/assets/logo1.svg'} alt="booklub logo"/></Link>
-            <h1>Hey {this.getCurrentUser}</h1>
+            <h1>Hey {this.fullName}</h1>
             </section>
     )
   }

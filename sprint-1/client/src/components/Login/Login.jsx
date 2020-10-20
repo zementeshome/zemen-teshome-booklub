@@ -27,6 +27,7 @@ function Login() {
     setFirstName('');
     setLastName('')
   }
+
   const history = useHistory();
 
   const handleLogin = (e) => {
@@ -61,7 +62,6 @@ function Login() {
       .createUserWithEmailAndPassword(email, password)
       .then((userInfo) => {
         console.log('successful login');
-    //   window.location.href = window.location.href.replace('3000/','3000/form');
           history.push('/form')
       })
       .catch((err) => {

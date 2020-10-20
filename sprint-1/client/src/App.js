@@ -13,17 +13,15 @@ function App() {
     <div className="App">
     <Router>
       <Switch>
-       <Route exact path="/"><Login /></Route>
+       <Route exact path="/" component={Login}></Route>
        <Route path="/home" component={Home}></Route>
        <Route path="/form" component={Form}></Route>
-      <Route path="/klub" component={Klub}></Route>
-      <Route path="/about" component={About}></Route>
+       <Route path="/klub" component={Klub}></Route>
+       <Route path="/about" component={About}></Route>
     </Switch>
     </Router>
     </div>
   );
 }
-
-// define routes 
 
 export default App;
