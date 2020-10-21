@@ -60,6 +60,11 @@ function Login() {
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
+      .then((cred) => {
+          fire.firestore().collection('booklub-users').doc(cred.user.uid).set({
+              firstName: firstName,
+          })
+      })
       .then((userInfo) => {
         console.log('successful login');
           history.push('/form')
@@ -81,8 +86,16 @@ function Login() {
   const authorizeListener = () => {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
-        clearInput();
         setUser(user);
+        fire
+        .firestore()
+        .collection('booklub-users')
+        .doc(user.uid)
+        .get()
+        .then((doc) => {
+            setFirstName(doc.get('firstName'));
+        })
+        clearInput();
       } else {
         setUser('')
       }

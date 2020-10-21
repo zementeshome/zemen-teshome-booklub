@@ -3,14 +3,19 @@ import { db } from '../../fire'
 import { Link } from 'react-router-dom';
 import fire from '../../fire';
 import './Klub.scss';
+import Join from '../Join/Join';
 
 class Klub extends React.Component {
 
     state = {
-        fullName: ''
+        user: ''
     }
 
-    authorizeListener = () => {
+    // user = () => {
+    //     this.state.user
+    // }
+
+    authorizeListener = (user) => {
         fire.auth().onAuthStateChanged(user => {
             if (user) {
                 {this.userId = user.uid}
@@ -71,7 +76,8 @@ class Klub extends React.Component {
     return (
         <section className="klub">
             <Link to="/home"><img className="klub__logo" src={process.env.PUBLIC_URL + '/assets/logo1.svg'} alt="booklub logo"/></Link>
-            <h1>Hey {this.fullName}</h1>
+            <h1>Hey</h1>
+            <Join />
             </section>
     )
   }
@@ -82,5 +88,5 @@ class Klub extends React.Component {
     //     <p>{users.fullName}</p>
     //     )
     // })}</h1>
-//TODO: Need a back to home button
+
 export default Klub;
