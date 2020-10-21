@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Login from './components/Login/Login';
 import Home from './components/Home/Home';
@@ -11,12 +11,14 @@ import './App.css';
 
 function App() {
 
+  const [user, setUser] = useState('');
+
   return (
     <div className="App">
     <Router>
       <Switch>
        <Route exact path="/" component={Login}></Route>
-       <Route path="/home" component={Home}></Route>
+       <Route path="/home"><Home user={user}/></Route>
        <Route path="/form" component={Form}></Route>
        <Route path="/klub" component={Klub}></Route>
        <Route path="/join" component={Join}></Route>

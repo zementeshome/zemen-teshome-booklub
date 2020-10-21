@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import fire from '../../fire';
 import './Klub.scss';
 import Join from '../Join/Join';
+import Chat from '../Chat/Chat';
 
 class Klub extends React.Component {
 

@@ -5,22 +5,53 @@ import { db } from '../../fire';
 import SearchBooks from '../SearchBooks/SearchBooks';
 
 class Home extends Component { 
-    state = {users: [], loggedInUserData: undefined};
+    state = {users: [], loggedInUserData: undefined, userFullName: ''};
     loggedInUser = '';
-    // book: '', result: []
+
     handleLogout = () => {
         fire.auth().signOut();
       };
 
-      //GET https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC?key=AIzaSyD711ZoA7Yy6HWyZ0lJxDASNR9uJYEOcXc
-    
+//   getUser =  fire.auth().onAuthStateChanged(user => {
+//     // console.log('getUser', user);
+//         if (user) { 
+//          let firebaseUser = {
+//              uid: user.uid,
+//              name: user.firstName,
+//              email: user.email
+//           };
+//           this.setState({ uid: firebaseUser.uid });
+//         }
+//         this.displayUser();
+//       });  
+
+//     //   docRef = () => {
+//     //     db.firestore().collection('booklub-users').doc(this.state.uid)
+//     // } 
+
+//      displayUser = () => { 
+//          console.log(this.state.uid)
+//         db.collection('booklub-users')
+//           .doc(`${this.state.uid}`)
+//           .get()
+//           .then(function (doc) {
+//               if (doc.exists) {
+//                   const { firstName } = doc.data();
+      
+//                   this.setState({
+//                       userFullName: firstName
+//                   })
+//                 } else {
+//                   // doc.data() will be undefined in this case
+//                   console.log("No such document!", doc);
+//               }
+//           }).catch(function (error) {
+//               console.log("Error getting document:", error);
+//           });
+//         }
+
       componentDidMount() {
-        // // axios.get('https://www.googleapis.com/books/v1/volumes?q=search-terms&key=AIzaSyD711ZoA7Yy6HWyZ0lJxDASNR9uJYEOcXc')
-        // .then(res => {
-        //     this.setState({ books: res.items})
-        // })
           db.collection('booklub-users').onSnapshot((snapshot) => {
-            // console.log(snapshot.docs)
             snapshot.docs.map((doc) => {
             const data = doc.data();
             if(data.userId === this.loggedInUser){
@@ -38,28 +69,20 @@ class Home extends Component {
           })   
       }
 
-    // handleChange = (e) => {
-    //     const book = e.target.value
-    //     this.setState({
-    //         book: book
-    //     })
-    // }
+    //   unsubscribe = firebase.firestore().collection('messages').where('user', "==", this.props.user.uid).onSnapshot(this.onCollectionUpdate)
 
-    // handleSubmit = (e) => {
-    //     e.preventDefault()
-    //     const book = e.target.value
-    //     const apiKey = 'AIzaSyD711ZoA7Yy6HWyZ0lJxDASNR9uJYEOcXc'
-    //     axios.get("https://www.googleapis.com/books/v1/volumes?q="+book+"?key="+apiKey+"&maxResults=40")
-    //     .then(data => {
-    //     console.log(data)
-    //     })
-    // }
+    //   getCurrentUser = () => {
+    //     db.fire().collection('booklub-users').where('fullName', "==", this.props.fullName.uid).onSnapshot(this.onCollectionUpdate)
+    //   
+
+    
 
 
     render() {
         return (
            <section className="home">
                <Header handleLogout={this.handleLogout}/>
+               <h1>Hello {this.state.userFullName}</h1>
                <SearchBooks />
            </section>
         )

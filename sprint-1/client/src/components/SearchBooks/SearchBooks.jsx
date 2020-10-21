@@ -28,7 +28,6 @@ const [apiKey, setApiKey] = useState('AIzaSyD711ZoA7Yy6HWyZ0lJxDASNR9uJYEOcXc')
 
     return (
         <section className="search">
-            <h1>Hello {user}</h1>
             <form className="search__form" onSubmit={handleSubmit}>
             <div className="search__container">
                        <input className="search__input" type="text" placeholder="search for books" autoComplete="off" onChange={handleChange}/><br />
