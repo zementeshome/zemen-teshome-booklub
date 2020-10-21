@@ -34,7 +34,7 @@ class Form extends React.Component {
         if(e.target.checked){
             genres.push(e.target.value);
         }else{
-            const index= genres.findIndex(g=>g == e.target.value)
+            const index= genres.findIndex(g=>g === e.target.value)
             if(index>-1){
                 genres.splice(index,1);
             }

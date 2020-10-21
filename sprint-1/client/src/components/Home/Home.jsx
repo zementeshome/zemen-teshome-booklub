@@ -12,43 +12,63 @@ class Home extends Component {
         fire.auth().signOut();
       };
 
-//   getUser =  fire.auth().onAuthStateChanged(user => {
-//     // console.log('getUser', user);
-//         if (user) { 
-//          let firebaseUser = {
-//              uid: user.uid,
-//              name: user.firstName,
-//              email: user.email
-//           };
-//           this.setState({ uid: firebaseUser.uid });
-//         }
-//         this.displayUser();
-//       });  
+  getUser =  fire.auth().onAuthStateChanged(user => {
+    // console.log('getUser', user);
+        if (user) { 
+         let firebaseUser = {
+             uid: user.uid,
+             name: user.fullName,
+             email: user.email
+          };
+          this.setState({ uid: firebaseUser.uid });
+        }
+        this.displayUser();
+      });  
 
-//     //   docRef = () => {
-//     //     db.firestore().collection('booklub-users').doc(this.state.uid)
-//     // } 
+    //   docRef = () => {
+    //     db.firestore().collection('booklub-users').doc(this.state.uid)
+    // } 
 
-//      displayUser = () => { 
-//          console.log(this.state.uid)
-//         db.collection('booklub-users')
-//           .doc(`${this.state.uid}`)
-//           .get()
-//           .then(function (doc) {
-//               if (doc.exists) {
-//                   const { firstName } = doc.data();
+    // console.log(this.state.uid)
+    //     db.collection('booklub-users')
+    //       .doc(`${this.state.uid}`)
+    //       .get()
+    //       .then(function (doc) {
+    //           if (doc.exists) {
+    //               const { fullName } = doc.data();
       
-//                   this.setState({
-//                       userFullName: firstName
-//                   })
-//                 } else {
-//                   // doc.data() will be undefined in this case
-//                   console.log("No such document!", doc);
-//               }
-//           }).catch(function (error) {
-//               console.log("Error getting document:", error);
-//           });
-//         }
+    //               this.setState({
+    //                   userFullName: fullName
+    //               })
+    //             } else {
+    //               // doc.data() will be undefined in this case
+    //               console.log("No such document!", doc);
+    //           }
+    //       }).catch(function (error) {
+    //           console.log("Error getting document:", error);
+    //       });
+
+    // where("email", "==", fire.auth().currentUser.email)
+
+     displayUser = () => { 
+         db.collection('booklub-users').get().then(snapshot => {
+            snapshot.docs.forEach(doc => {
+            // doc.email === fire.auth().currentUser.email
+              if (doc.exists) {
+                const { fullName } = doc.data();
+      
+                  this.setState({
+                      userFullName: fullName
+                  })
+                } else {
+                  // doc.data() will be undefined in this case
+                  console.log("No such document!", doc);
+              }
+            })
+          }).catch(function (error) {
+              console.log("Error getting document:", error);
+          });
+        }
 
       componentDidMount() {
           db.collection('booklub-users').onSnapshot((snapshot) => {

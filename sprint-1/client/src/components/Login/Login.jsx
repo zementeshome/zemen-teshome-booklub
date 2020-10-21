@@ -60,11 +60,11 @@ function Login() {
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then((cred) => {
-          fire.firestore().collection('booklub-users').doc(cred.user.uid).set({
-              firstName: firstName,
-          })
-      })
+      // .then((cred) => {
+      //     fire.firestore().collection('booklub-users').doc(cred.user.uid).set({
+      //         firstName: firstName,
+      //     })
+      // })
       .then((userInfo) => {
         console.log('successful login');
           history.push('/form')
@@ -87,14 +87,6 @@ function Login() {
     fire.auth().onAuthStateChanged((user) => {
       if (user) {
         setUser(user);
-        fire
-        .firestore()
-        .collection('booklub-users')
-        .doc(user.uid)
-        .get()
-        .then((doc) => {
-            setFirstName(doc.get('firstName'));
-        })
         clearInput();
       } else {
         setUser('')

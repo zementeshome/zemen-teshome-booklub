@@ -1,10 +1,10 @@
 import React from 'react'
-import { db } from '../../fire'
+// import { db } from '../../fire'
 import { Link } from 'react-router-dom';
 import fire from '../../fire';
 import './Klub.scss';
 import Join from '../Join/Join';
-import Chat from '../Chat/Chat';
+
 
 class Klub extends React.Component {
 
@@ -19,7 +19,7 @@ class Klub extends React.Component {
     authorizeListener = (user) => {
         fire.auth().onAuthStateChanged(user => {
             if (user) {
-                {this.userId = user.uid}
+                this.userId = user.uid
             } else {
                 console.log('no user is signed in')
             }
