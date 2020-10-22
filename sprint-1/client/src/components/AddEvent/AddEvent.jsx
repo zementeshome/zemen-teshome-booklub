@@ -3,10 +3,10 @@ import React from 'react'
 function AddEvent() {
 
     let gapi = window.gapi
-    let CLIENT_ID = "55837695730-ien4q5b6jhk978ejliqc1mrgchstg723.apps.googleusercontent.com"
-    let API_KEY = "AIzaSyA9XRQG9Nt1N4zz0SFMW2avtnYyQ0-LEzo"
+    let CLIENT_ID = "930784643679-5csaud69geet0s0ppkcghdtt34p6oa38.apps.googleusercontent.com"
+    let API_KEY = "AIzaSyBVMxVyIj96Tzr-UDEgWBm1oSCYiUC_8ow"
     let DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-    let SCOPES = "https://www.googleapis.com/auth/calendar.readonly";
+    let SCOPES = "https://www.googleapis.com/auth/calendar.events";
 
     const handleClick = () => {
         gapi.load(`client:auth2`, () => {
@@ -56,7 +56,9 @@ function AddEvent() {
               })
 
               request.execute(event => {
+                // console.log(event)
                   window.open(event.htmlLink)
+                  // or window.open
               })
         })
     })

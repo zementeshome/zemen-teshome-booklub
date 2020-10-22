@@ -14,18 +14,16 @@ class Home extends Component {
       };
 
   getUser = fire.auth().onAuthStateChanged(user => {
-    // let user = fire.auth().currentUser
         if (user) { 
-            console.log('user exists');
+            console.log(user);
         //   this.setState({ uid: firebaseUser.uid });
         }
         
       });  
     componentDidMount() {
-      this.getUser()
+    //   const userId = fire.auth().currentUser.uid
         db.collection('booklub-users').get().then(snapshot => {
            snapshot.docs.forEach(doc => {
-            // const { fullName } = doc.data();
              if (doc.exists) {
                const { fullName } = doc.data();
                     this.setState({
@@ -97,8 +95,9 @@ class Home extends Component {
         return (
            <section className="home">
                <Header handleLogout={this.handleLogout}/>
-               <h1>hey {this.state.userFullName}</h1>
-               <img className="home__hero" src={process.env.PUBLIC_URL + '/assets/hero.svg'} alt="hero image of library"/>
+               <h1 className="home__header">hey {this.state.userFullName},</h1>
+               <p className="home__text">welcome to booklub. we're here to connect you with like-minded readers and start your book club journey. please visit the klub page to meet your klub members. if you want to know more about how we run things, click here.</p>
+               <img className="home__hero" src={process.env.PUBLIC_URL + '/assets/hero2.svg'} alt="hero image of library"/>
                <SearchBooks />
            </section>
         )

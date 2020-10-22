@@ -5,6 +5,7 @@ import fire from '../../fire';
 import './Klub.scss';
 import Join from '../Join/Join';
 import AddEvent from '../AddEvent/AddEvent';
+import { FaUser } from 'react-icons/fa';
 
 
 class Klub extends React.Component {
@@ -79,6 +80,14 @@ class Klub extends React.Component {
         <section className="klub">
             <Link to="/home"><img className="klub__logo" src={process.env.PUBLIC_URL + '/assets/logo1.svg'} alt="booklub logo"/></Link>
             <h1 className="klub__header">klubs</h1>
+            <div className="klub__members">
+                {/* <img className="klub__icon" src={process.env.PUBLIC_URL + '/assets/user-icon.png'} alt="user icon"/> */}
+                <p className="klub__member-name"><FaUser /> daniel</p>
+                {/* <img className="klub__icon" src={process.env.PUBLIC_URL + '/assets/user-icon.png'} alt="user icon"/> */}
+                <p className="klub__member-name"><FaUser /> zena</p>
+                {/* <img className="klub__icon" src={process.env.PUBLIC_URL + '/assets/user-icon.png'} alt="user icon"/> */}
+                <p className="klub__member-name"><FaUser /> zemen</p>
+            </div>
             <AddEvent />
             <Join />
             </section>

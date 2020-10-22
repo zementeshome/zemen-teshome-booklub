@@ -31,6 +31,7 @@
         @include mobile {
             list-style-type: none;
             padding-right: 3vw;
+            font-weight: bold;
         }
     }
 
@@ -38,10 +39,15 @@
         @include mobile {
             outline: none;
             border: 1px solid black;
+            background-color: white;
+            font-weight: bold;
             height: 21px;
             font-size: 12px;
+            font-family: 'Roboto';
             border-radius: 5px;
-            background-image: linear-gradient(to right, lightblue,#ded5ef, pink);
+            font-weight: bold;
+
+            // background-image: linear-gradient(to right, lightblue,#ded5ef, pink);
         }
     }
 }

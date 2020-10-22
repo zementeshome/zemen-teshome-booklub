@@ -9,4 +9,11 @@
             width: 20%;
         }
     }
+
+    &__members {
+        @include mobile {
+            display: flex;
+            justify-content: center;
+        }
+    }
 }
