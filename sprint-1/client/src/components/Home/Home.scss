@@ -1,0 +1,12 @@
+@import '../../styles/partials/variables';
+
+@import '../../styles/partials/fonts';
+
+.home {
+
+    &__hero {
+        @include mobile {
+            width: 100%;
+        }
+    }
+}

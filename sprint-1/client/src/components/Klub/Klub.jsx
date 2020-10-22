@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import fire from '../../fire';
 import './Klub.scss';
 import Join from '../Join/Join';
+import AddEvent from '../AddEvent/AddEvent';
 
 
 class Klub extends React.Component {
@@ -77,7 +78,8 @@ class Klub extends React.Component {
     return (
         <section className="klub">
             <Link to="/home"><img className="klub__logo" src={process.env.PUBLIC_URL + '/assets/logo1.svg'} alt="booklub logo"/></Link>
-            <h1>Hey</h1>
+            <h1 className="klub__header">klubs</h1>
+            <AddEvent />
             <Join />
             </section>
     )
