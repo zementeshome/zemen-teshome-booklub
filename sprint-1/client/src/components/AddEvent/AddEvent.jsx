@@ -3,8 +3,8 @@ import React from 'react'
 function AddEvent() {
 
     let gapi = window.gapi
-    let CLIENT_ID = "930784643679-5csaud69geet0s0ppkcghdtt34p6oa38.apps.googleusercontent.com"
-    let API_KEY = "AIzaSyBVMxVyIj96Tzr-UDEgWBm1oSCYiUC_8ow"
+    let CLIENT_ID = "345527721227-14s99r64u63br5634e1csvvcqcnnecbe.apps.googleusercontent.com"
+    let API_KEY = "AIzaSyC2tqnocECgB7xT5F3NrYODL3NHRyh-VYE"
     let DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
     let SCOPES = "https://www.googleapis.com/auth/calendar.events";
 

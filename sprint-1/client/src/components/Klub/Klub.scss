@@ -3,17 +3,36 @@
 @import '../../styles/partials/fonts';
 
 .klub {
+    font-family: 'Roboto';
     
     &__logo {
         @include mobile {
-            width: 20%;
+            width: 50px;
+            // display: flex;
+            // justify-content: space-evenly;
+        }
+    }
+
+    &__header {
+        @include mobile {
+            font-weight: 600;
+            font-size: 30px;
+            display: flex;
+            flex-direction: flex-start;
+            margin-top: -1rem;
+            font-weight: normal;
+            margin-left: 5vw;
+            width: 280px;
         }
     }
 
     &__members {
         @include mobile {
             display: flex;
-            justify-content: center;
+            justify-content: flex-start;
+            margin-left: 5vw;
+            margin-top: -1rem;
+            font-size: 15px;
         }
     }
 }

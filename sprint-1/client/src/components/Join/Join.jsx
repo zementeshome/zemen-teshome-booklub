@@ -10,7 +10,8 @@ const [room, setRoom] = useState('');
         <section className="join">
             <div className="join__outer-container">
             <div className="join__inner-container">
-                <h1 className="join__header">Join</h1>
+                <h1 className="join__header">get to know your klub members below</h1>
+                <p className="join__header-text">don't forget to join the same room!</p>
                 <div>
                     <input placeholder="name" className="join__input" type="text" onChange={(e) => setName(e.target.value)} />
                     </div>

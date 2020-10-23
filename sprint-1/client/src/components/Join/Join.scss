@@ -1,0 +1,60 @@
+@import '../../styles/partials/variables';
+
+@import '../../styles/partials/fonts';
+
+.join {
+    font-family: 'Roboto';
+
+    * {
+        box-sizing: border-box;
+      }
+    
+    &__header {
+        @include mobile {
+            font-weight: normal;
+            font-size: 13px;
+            display: flex;
+            justify-content: center;
+        }
+    }
+
+    &__header-text {
+        @include mobile {
+            font-weight: normal;
+            font-style: italic;
+            font-size: 10px;
+            display: flex;
+            justify-content: center;
+            margin-top: -1rem;
+        }
+    }
+
+    &__input {
+        @include mobile {
+            margin-top: 5px;
+            margin-bottom: 8px;
+            border-radius: 5px;
+            border-color: black;
+            height: 25px;
+        }
+    }
+
+    &__input::placeholder {
+        @include mobile {
+            font-family: 'Roboto';
+        }
+    }
+
+    &__button {
+        outline: none;
+        border: 1px solid black;
+        background-color: black;
+        color: white;
+        height: 22px;
+        font-size: 12px;
+        font-family: 'Roboto';
+        border-radius: 5px;
+        padding-bottom: 4px;
+    }
+}   
+

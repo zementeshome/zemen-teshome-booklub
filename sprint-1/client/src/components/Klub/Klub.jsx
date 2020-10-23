@@ -5,7 +5,7 @@ import fire, { db } from '../../fire';
 import './Klub.scss';
 import Join from '../Join/Join';
 import AddEvent from '../AddEvent/AddEvent';
-import { FaUser } from 'react-icons/fa';
+import { FaRegUserCircle } from 'react-icons/fa';
 
 
 class Klub extends React.Component {
@@ -109,10 +109,10 @@ class Klub extends React.Component {
     return (
         <section className="klub">
             <Link to="/home"><img className="klub__logo" src={process.env.PUBLIC_URL + '/assets/logo1.svg'} alt="booklub logo"/></Link>
-            <h1 className="klub__header">klubs</h1>
+            <h1 className="klub__header">welcome,</h1>
             <div className="klub__members">
                 {this.state.users?.map((user) => 
-                    <p className="klub__member-name"><FaUser /> {user}</p>
+                    <p className="klub__member-name"><FaRegUserCircle style={{width: '30%'}}/> {user}</p>
                 )}
                 {/* <p className="klub__member-name"><FaUser /> daniel</p>
                 <p className="klub__member-name"><FaUser /> zena</p>
