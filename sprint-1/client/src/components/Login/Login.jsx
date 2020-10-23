@@ -106,10 +106,10 @@ function Login() {
                              <form className="login__form-signIn">
                              <label className="login__label">username</label>
                             <input className="login__input" type="text" autoFocus required value={email} onChange={(e) => setEmail(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
-                            <p className="login__error">{emailError}</p>
+                            <p className="login__email-error">{emailError}</p>
                             <label className="login__label">password</label>
                             <input className="login__input" type="password" required value={password}onChange={(e) => setPassword(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
-                        <p className="login__error">{passwordError}</p>
+                        <p className="login__password-error">{passwordError}</p>
                             <div className="login__button-div">
                              <button className="login__button" onClick={handleLogin}>sign in</button>
                              </div>
@@ -123,12 +123,12 @@ function Login() {
                         <input className="login__input" type="text" autoFocus required value={firstName} onChange={(e) => setFirstName(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
                         <label className="login__label">last name</label>
                         <input className="login__input" type="text" autoFocus required value={lastName} onChange={(e) => setLastName(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
-                        <label className="login__label">username (email)</label>
+                        <label className="login__label-2">username (email)</label>
                         <input className="login__input" type="text" autoFocus required value={email} onChange={(e) => setEmail(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
-                        <p className="login__error">{emailError}</p>
+                        <p className="login__email-error">{emailError}</p>
                         <label className="login__label">password</label>
                         <input className="login__input" type="password" required value={password}onChange={(e) => setPassword(e.target.value)} style={{fontFamily: 'Roboto', fontSize: '14px'}}></input>
-                    <p className="login__error">{passwordError}</p>
+                    <p className="login__password-error">{passwordError}</p>
                              <div className="login__button-div">
                                 <button className="login__button" onClick={handleSignUp}>sign up</button>
                             </div>

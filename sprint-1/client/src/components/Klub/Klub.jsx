@@ -33,7 +33,7 @@ class Klub extends React.Component {
     
     componentDidMount() {
     if (!this.user) {
-        this.props.history.push('/login')
+        this.props.history.push('/')
     } else {
         this.displayKlub();
      }
