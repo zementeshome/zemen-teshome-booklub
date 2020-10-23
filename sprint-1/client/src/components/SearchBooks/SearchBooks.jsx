@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import axios from 'axios';
+import './SearchBooks.scss';
 
 function SearchBooks() {
 
@@ -29,9 +30,10 @@ const [apiKey, setApiKey] = useState('AIzaSyD711ZoA7Yy6HWyZ0lJxDASNR9uJYEOcXc')
         <section className="search">
             <form className="search__form" onSubmit={handleSubmit}>
             <div className="search__container">
-                       <input className="search__input" type="text" placeholder="search for books" autoComplete="off" onChange={handleChange}/><br />
-                       </div>
+                <label className="search__label" for="search__input">
+                       <input className="search__input" type="text" autoComplete="off" onChange={handleChange}/></label><br />
                        <button className="search__button" type="submit">search</button>
+                       </div>
                </form>
                {result.map(book => (
                   <a href={book.volumeInfo.previewLink} target="_blank" rel="noopener noreferrer"><img src={book.volumeInfo.imageLinks.thumbnail} alt={book.title}/> </a>
