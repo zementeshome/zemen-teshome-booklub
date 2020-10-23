@@ -1,7 +1,7 @@
 import React from 'react'
 // import { db } from '../../fire'
 import { Link } from 'react-router-dom';
-import fire from '../../fire';
+import fire, { db } from '../../fire';
 import './Klub.scss';
 import Join from '../Join/Join';
 import AddEvent from '../AddEvent/AddEvent';
@@ -11,21 +11,51 @@ import { FaUser } from 'react-icons/fa';
 class Klub extends React.Component {
 
     state = {
-        user: ''
+        users: []
     }
 
     // user = () => {
     //     this.state.user
     // }
 
-    authorizeListener = (user) => {
-        fire.auth().onAuthStateChanged(user => {
-            if (user) {
-                this.userId = user.uid
-            } else {
-                console.log('no user is signed in')
-            }
-        })
+    user = fire.auth().currentUser
+
+    // authorizeListener = (user) => {
+    //     fire.auth().onAuthStateChanged(user => {
+    //         if (user) {
+    //             this.userId = user.uid
+    //         } else {
+    //             this.props.history.push('/login')
+    //             // console.log('no user is signed in')
+    //         }
+    //     })
+    // }
+    
+    componentDidMount() {
+    if (!this.user) {
+        this.props.history.push('/login')
+    } else {
+        this.displayKlub();
+     }
+    }
+
+    displayKlub = () => {
+        db.collection('booklub-users').where('userId', '==', this.user?.email).get().then((querySnapshot) => {
+            console.log(querySnapshot)
+            querySnapshot.forEach((doc) =>{
+              let klub = doc.data().klub
+              console.log(klub)
+              db.collection('klubs').doc(klub).get().then((doc) => {
+                    if (doc.exists) {
+                console.log(doc.data())
+                      this.setState({
+                          users: [...doc.data().users]
+                        })
+                    }
+              })
+            })
+    })
+}
     // componentDidMount() {
     //     const booklub = fire.database().ref('booklub-users')
     //     booklub.child(this.userId).child('fullName').once('value').then(data => {
@@ -73,7 +103,7 @@ class Klub extends React.Component {
     // username = () => {
     //     db.collection('booklub-users').get(this.state.fullName)
     //  
-   }
+   
 
     render() {
     return (
@@ -81,12 +111,12 @@ class Klub extends React.Component {
             <Link to="/home"><img className="klub__logo" src={process.env.PUBLIC_URL + '/assets/logo1.svg'} alt="booklub logo"/></Link>
             <h1 className="klub__header">klubs</h1>
             <div className="klub__members">
-                {/* <img className="klub__icon" src={process.env.PUBLIC_URL + '/assets/user-icon.png'} alt="user icon"/> */}
-                <p className="klub__member-name"><FaUser /> daniel</p>
-                {/* <img className="klub__icon" src={process.env.PUBLIC_URL + '/assets/user-icon.png'} alt="user icon"/> */}
+                {this.state.users?.map((user) => 
+                    <p className="klub__member-name"><FaUser /> {user}</p>
+                )}
+                {/* <p className="klub__member-name"><FaUser /> daniel</p>
                 <p className="klub__member-name"><FaUser /> zena</p>
-                {/* <img className="klub__icon" src={process.env.PUBLIC_URL + '/assets/user-icon.png'} alt="user icon"/> */}
-                <p className="klub__member-name"><FaUser /> zemen</p>
+                <p className="klub__member-name"><FaUser /> zemen</p> */}
             </div>
             <AddEvent />
             <Join />

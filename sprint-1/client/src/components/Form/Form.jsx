@@ -7,13 +7,16 @@ import fire from '../../fire';
 class Form extends React.Component {
 
     state = {
+
         userId: '',
         hours: '',
         purpose: '',
         genres: [],
         authors: '',
-        fullName: ''
+        // fullName: ''
     };
+
+    user = fire.auth().currentUser
 
     onChange = (e) => {
         this.setState({
@@ -52,6 +55,8 @@ class Form extends React.Component {
         })
     }
 
+    // fullName: fire.auth().currentUser.displayName
+
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(fire.auth().currentUser)
@@ -59,7 +64,7 @@ class Form extends React.Component {
             ...this.state,
             userId: fire.auth().currentUser.email
         })
-        db.collection('booklub-users').add(this.state).then(() => {
+        db.collection('booklub-users').add({...this.state, userId: fire.auth().currentUser.email}).then(() => {
         this.addUserToKlub()
         })
         this.props.history.push('/home');
@@ -82,7 +87,17 @@ class Form extends React.Component {
                         klubIndex = index
                     }
                 })
-                db.collection('klubs').doc(klubs[klubIndex].id).update({users: klubs[klubIndex].users?[...klubs[klubIndex].users, this.state.fullName] : [this.state.fullName]})
+                let klubToModify = klubs[klubIndex]
+                let users = klubToModify?.data.users??[]
+                users.push(fire.auth().currentUser.displayName)
+                console.log(users, 'updated users')
+                db.collection('klubs').doc(klubs[klubIndex].id).update({users: users}).then(() => {
+                    db.collection('booklub-users').where('userId', '==', this.user.email).get().then((querySnapshot) => {
+                        querySnapshot.forEach((doc) =>{
+                            db.collection('booklub-users').doc(doc.id).update({klub: klubToModify.id})
+                        })
+                    })
+                })
             }
         }); 
     }
@@ -98,7 +113,7 @@ class Form extends React.Component {
                 {/* <button className="form__logout" onClick={this.handleLogout}>logout</button> */}
                 <p className="form__info">please fill out the form below so we can get to know you a little better.</p>
                 <form onSubmit={this.handleSubmit} name="form__container" action="" method="GET">
-                <input className="form__user" value={this.state.fullName} type="text" name="fullName" required placeholder="your first name" style={{fontFamily: 'Roboto', fontSize: '13px'}} onChange={(e) => this.setState({fullName: e.target.value})}/>
+                {/* <input className="form__user" value={this.state.fullName} type="text" name="fullName" required placeholder="your first name" style={{fontFamily: 'Roboto', fontSize: '13px'}} onChange={(e) => this.setState({fullName: e.target.value})}/> */}
                 <p className="form__subheading">how many hours a week to do you spend reading?</p>
                 <div className="form__box">
                 <input className="form__input" type="radio" name="radAnswer" value="0" onChange={this.onChange}/>

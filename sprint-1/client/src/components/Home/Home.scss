@@ -3,6 +3,7 @@
 @import '../../styles/partials/fonts';
 
 .home {
+    font-family: 'Roboto';
 
     &__header {
         @include mobile {

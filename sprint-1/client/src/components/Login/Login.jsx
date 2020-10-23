@@ -60,14 +60,11 @@ function Login() {
     fire
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      // .then((cred) => {
-      //     fire.firestore().collection('booklub-users').doc(cred.user.uid).set({
-      //         firstName: firstName,
-      //     })
-      // })
       .then((userInfo) => {
         console.log('successful login');
+        fire.auth().currentUser.updateProfile({displayName: `${firstName}`}).then(() => {
           history.push('/form')
+        })
       })
       .catch((err) => {
         switch (err.code) {
