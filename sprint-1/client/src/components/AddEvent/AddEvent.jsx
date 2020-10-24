@@ -1,4 +1,6 @@
 import React from 'react'
+import './AddEvent.scss';
+import { FaBookOpen } from 'react-icons/fa';
 
 function AddEvent() {
 
@@ -65,7 +67,21 @@ function AddEvent() {
 }
     return (
         <div className="addEvent">
-             <button className="addEvent__button" onClick={handleClick}>add event</button>
+          <h1 className="addEvent__header">tips to make your klub run smoothly:</h1>
+          <div className="addEvent__container">
+          <ul className="addEvent__list">
+          <li className="addEvent__list-item"><FaBookOpen/> after getting to know each other decide who the klub moderator will be</li>
+          <li className="addEvent__list-item"><FaBookOpen/> stay on the same page</li>
+          <li className="addEvent__list-item"><FaBookOpen/> remember that the purpose of this klub is to read and enjoy yourselves</li>
+          <li className="addEvent__list-item"><FaBookOpen/> give your discussions structure</li>
+          <li className="addEvent__list-item"><FaBookOpen/> give everyone a chance to be heard and have their book of choice nominated</li>
+          <li className="addEvent__list-item"><FaBookOpen/> meetings should start on time and can be organized through google calendar below</li>
+          </ul>
+          </div>
+          <div className="addEvent__button-container">
+          <button className="addEvent__button" onClick={handleClick}><span className="addEvent__add">add event</span></button>
+          </div>
+          <img className="addEvent__image" src={process.env.PUBLIC_URL + '/assets/meeting2.jpg'} alt="virtual meeting clip art"/>
         </div>
     )
 }

@@ -1,0 +1,112 @@
+@import '../../styles/partials/variables';
+
+@import '../../styles/partials/fonts';
+
+.addEvent {
+    font-family: 'Roboto';
+
+    &__header {
+        @include mobile {
+        font-size: 16px;
+        display: flex;
+        justify-content: flex-start;
+        margin-left: 5vw;
+        }
+    }
+
+    &__container {
+        @include mobile {
+            width: 280px;
+            
+        }
+    }
+
+    &__list {
+        @include mobile {
+            text-align: left;
+            font-size: 13px;
+        }
+    }
+
+    &__list-item {
+        @include mobile {
+            list-style-type: none;
+            padding-top: 0.5rem;
+        }
+    }
+
+    &__button-container {
+     display: flex;
+     justify-content: center;
+    }
+
+    &__button {
+        @include mobile {
+    width: 100px;
+    height: 30px;
+  border: 1px solid black;
+  font-famiy: 'Roboto';
+  font-weight: bold;
+  border-radius: 5px;
+  font-size: 12px;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+  transition: 1s;
+        }
+        }
+        &__button::before,
+        &__button::after {
+            position: absolute;
+            background:  #4285F4;
+            width: 100px;
+            height: 30px;
+            border-radius: 5px;
+            z-index: -1;
+            transition: 1s;
+            content: '';
+        }
+
+        &__button::before {
+            width: 100px;
+            height: 30px;
+           
+        }
+
+        &__button::after {
+            width: 100px;
+            height: 30px;
+        }
+
+        &__add {
+            -webkit-touch-callout: none;
+    -webkit-user-select: none;
+     -khtml-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+        }
+
+        &__button:hover::before {
+            width: 0px;
+            background: #fff;
+        }
+
+        &__button:hover::after {
+            height: 0px;
+            background: #fff;
+        }
+
+        &__button:hover {
+            background: #fff;
+        }
+
+        &__image {
+            width: 70%;
+            margin-top: 2rem;
+        }
+}
