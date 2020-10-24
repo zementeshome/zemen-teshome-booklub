@@ -5,6 +5,7 @@ import InfoBar from '../InfoBar/InfoBar';
 import MessageInput from '../MessageInput/MessageInput';
 import Messages from '../Messages/Messages';
 import TextBox from '../TextBox/TextBox';
+import './Chat.scss';
 
 let socket;
 

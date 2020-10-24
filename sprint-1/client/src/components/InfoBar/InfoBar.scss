@@ -1,0 +1,48 @@
+@import '../../styles/partials/variables';
+
+@import '../../styles/partials/fonts';
+
+.infoBar {
+    @include mobile {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        background: black;
+        border-radius: 4px 4px 0 0;
+        height: 60px;
+        width: 100%;
+        font-family: 'Roboto';
+    }
+
+    &__header {
+        @include mobile {
+            font-size: 13px;
+            margin-left: 3vw;
+        }
+    }
+
+    &__left-inner-container {
+        @include mobile {
+            flex: 0.5;
+            display: flex;
+            align-items: center;
+            margin-left: 5%;
+            color: white;
+        }
+    }
+
+    &__right-inner-container {
+        @include mobile {
+            display: flex;
+            flex: 0.5;
+            justify-content: flex-end;
+            margin-right: 5%;
+        }
+    }
+
+    &__online-icon {
+        @include mobile {
+            margin-right: 5%;
+        }
+    }
+}

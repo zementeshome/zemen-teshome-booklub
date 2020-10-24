@@ -43,12 +43,15 @@
             border-radius: 5px;
             border-color: black;
             height: 25px;
+            font-family: 'Roboto';
+            font-size: 12px;
         }
     }
 
     &__input::placeholder {
         @include mobile {
             font-family: 'Roboto';
+            font-size: 12px;
         }
     }
 

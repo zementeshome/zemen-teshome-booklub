@@ -1,0 +1,41 @@
+@import '../../styles/partials/variables';
+
+@import '../../styles/partials/fonts';
+
+.messageInput {
+    font-family: 'Roboto';
+    font-size: 13px;
+    &__form {
+        @include mobile {
+            display: flex;
+            border-top: 2px solid black;
+        }
+    }
+    
+    &__send {
+        @include mobile {
+            border: none;
+            border-radius: 0;
+            padding: 5%;
+            width: 80%;
+            font-size: 13px;
+        }
+    }
+
+    &__send:focus, 
+    textarea:focus, 
+    select:focus {
+        outline: none;
+    }
+
+    &__button {
+       color: #fff !important;
+       text-decoration: none;
+       background: black;
+       padding: 20px;
+       display: inline-block;
+       border: none;
+       width: 20%;
+       font-family: 'Roboto';
+    }
+}

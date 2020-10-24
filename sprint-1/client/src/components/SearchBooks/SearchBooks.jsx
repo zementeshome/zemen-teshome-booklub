@@ -30,7 +30,7 @@ const [apiKey, setApiKey] = useState('AIzaSyD711ZoA7Yy6HWyZ0lJxDASNR9uJYEOcXc')
         <section className="search">
             <form className="search__form" onSubmit={handleSubmit}>
             <div className="search__container">
-                <label className="search__label" for="search__input">
+                <label className="search__label" htmlFor="search__input">
                        <input className="search__input" type="text" autoComplete="off" onChange={handleChange}/></label><br />
                        <button className="search__button" type="submit">search</button>
                        </div>
