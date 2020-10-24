@@ -1,4 +1,5 @@
 import React from 'react'
+import './TextBox.scss';
 
 function TextBox( {users} ) {
     return (

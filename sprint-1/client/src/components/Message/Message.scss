@@ -1,3 +1,71 @@
 @import '../../styles/partials/variables';
 
 @import '../../styles/partials/fonts';
+
+.message {
+    @include mobile {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 5%;
+        margin-top: 3px;
+    }
+
+    &__box {
+        @include mobile {
+            background: #f3f3f3;
+            border-radius: 20px;
+            padding: 5px 20px;
+            color: white;
+            display: inline-block;
+            max-width: 80%;
+        }
+    }
+
+    &__text {
+        @include mobile {
+            width: 100%;
+            letter-spacing: 0;
+            float: left;
+            font-size: 1em;
+            word-wrap: break-word;
+        }
+    }
+
+    &__text img {
+        vertical-align: middle
+    }
+
+    &__sent-text {
+        display: flex;
+        flex-direction: flex-start;
+    }
+
+}
+
+.pr-10 {
+    padding-right: 10px;
+}
+
+.justifyStart {
+    justify-content: flex-start;
+}
+
+.justifyEnd {
+    justify-content: flex-end;
+}
+
+.colorWhite {
+    color: white;
+}
+
+.colorDark {
+    color: #353535;
+}
+
+.backgroundBlue {
+    background: #2979FF;
+}
+
+.backgroundLight {
+    background: #f3f3f3;
+}

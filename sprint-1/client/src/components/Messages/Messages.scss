@@ -1,0 +1,9 @@
+@import '../../styles/partials/variables';
+
+@import '../../styles/partials/fonts';
+
+.messages {
+    padding: 5% 0;
+    overflow: auto;
+    flex: auto;
+}

@@ -1,0 +1,48 @@
+@import '../../styles/partials/variables';
+
+@import '../../styles/partials/fonts';
+
+.text {
+    @include mobile {
+    display: flex;
+    flex-direction: column;
+    // margin-left: 100px;
+    color: white;
+    height: 60%;
+    font-family: 'Roboto';
+    justify-content: space-between; 
+    }
+
+    &__header {
+        @include mobile {
+            margin-bottom: 0px;
+            font-size: 13px;
+
+        }
+    }
+
+    &__online-container {
+        @include mobile {
+        display: flex;
+        align-items: center;
+        margin-bottom: 50%;
+        }
+    }
+
+    &__online {
+        @include mobile {
+            display: flex;
+            align-items: center;
+            font-size: 13px;
+            font-weight: normal;
+            margin-left: 2vw;
+            margin-right: 2vw;
+        }
+    }
+
+    &__icon {
+        @include mobile {
+            padding-left: 10px;
+        }
+    }
+}
