@@ -15,24 +15,29 @@
 
     &__header {
         @include mobile {
-            font-weight: 600;
             font-size: 30px;
             display: flex;
-            flex-direction: flex-start;
-            margin-top: -1rem;
+            justify-content: center;
+            margin-top: 1rem;
             font-weight: normal;
-            margin-left: 5vw;
-            width: 280px;
+            // margin-left: 5vw;
+            // width: 280px;
+        }
+        @include desktop {
+            font-size: 40px;
         }
     }
 
     &__members {
         @include mobile {
             display: flex;
-            justify-content: flex-start;
-            margin-left: 5vw;
+            justify-content: center;
+            // margin-left: 5vw;
             margin-top: -1rem;
             font-size: 15px;
+        }
+        @include desktop {
+            font-size: 20px;
         }
     }
 }

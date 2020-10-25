@@ -130,4 +130,6 @@ class Home extends Component {
     }
 }
 
+//TODO: add a hover to nav bar?
+
 export default Home;
