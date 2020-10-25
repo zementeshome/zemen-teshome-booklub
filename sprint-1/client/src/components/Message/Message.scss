@@ -37,7 +37,10 @@
 
     &__sent-text {
         display: flex;
-        flex-direction: flex-start;
+        align-items: center;
+        color: #828282;
+        letter-spacing: .3px;
+        padding-left: 10px;
     }
 
 }

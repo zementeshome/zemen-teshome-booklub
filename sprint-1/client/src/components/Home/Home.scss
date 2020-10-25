@@ -5,6 +5,38 @@
 .home {
     font-family: 'Roboto';
 
+    &__container {
+        margin-bottom: 3rem;
+        // width: 50%;
+    }
+
+    &__div {
+        // @include mobile {
+        //     display: none
+        // }
+        @include tablet {
+            display: flex;
+        }
+    }
+
+    &__left-container {
+        width: 50%;
+    }
+
+    &__right-container {
+        width: 50%;
+    }
+
+    // &__book-cover-container {
+    //     display: flex;
+    //     width: 50%;
+    // }
+
+    // &__book-text-container {
+    //     display: flex;
+    //     width: 50%;
+    // }
+
     &__header {
         @include mobile {
             display: flex;
@@ -38,6 +70,9 @@
             width: 100%;
             // border-bottom: 2px solid red;
         }
+        @include desktop {
+            // margin-top: -10rem;
+        }
     }
 
     &__text-container {
@@ -46,6 +81,9 @@
         }
         @include tablet {
             width: 300px;
+        }
+        @include desktop {
+            width: 400px;
         }
     }
 
@@ -66,11 +104,77 @@
             margin-left: 2.6vw;
         }
     }
+
+    &__text-line {
+        @include mobile {
+            display: none;
+        }
+        @include tablet {
+        border-bottom: 2px solid black;
+        width: 70%;
+        margin-right: 5vw;
+        display: inline-block;
+    }
+    }
 //FIXME: text moves when span is applied
     &__text-span p {
         font-weight: bold;
     }
+
+    &__book {
+        @include mobile {
+            display: none;
+        }
+        @include tablet {
+            display: flex;
+            justify-content: flex-start;
+            font-size: 30px;
+            color: black;
+            font-weight: normal;
+            margin-top: 3rem;
+        }
+
+    }
+
+    &__book-cover {
+        @include mobile {
+            display: none;
+        }
+        @include tablet {
+        width: 30%;
+        display: flex;
+        flex-direction: flex-start;
+        }
+    }
+
+    &__book-text-container {
+        @include mobile {
+            display: none;
+        }
+        @include tablet {
+            display: flex;
+            justify-content: flex-end;
+            margin-top: -12rem;
+            margin-right: 5vw;
+        }
+        @include desktop {
+            margin-top: -15rem;
+        }
+    }
+
+    &__book-text {
+        @include mobile {
+            display: none
+        }
+        @include tablet {
+            font-size: 13px;
+            text-align: left;
+            width: 50%;
+            display: flex;
+        }
+    }
 }
+
 
 // p {
 //     display: flex;

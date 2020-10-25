@@ -4,6 +4,13 @@
 
 .search {
 
+        @include tablet {
+        margin-top: 5rem;
+        }
+        @include desktop {
+                margin-top: 10rem;
+        }
+
     &__form {
 
             display:table;

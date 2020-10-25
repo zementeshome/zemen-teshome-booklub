@@ -23,12 +23,10 @@ const Message = ({ message: { user, text }, name }) => {
         )
     : (
         <section className="message jusitfyStart">
-        <div className="message__container">
         <div className="message__box backgroundLight">
             <p className="message__text colorDark">{ReactEmoji.emojify(text)}</p>
         </div>
         <p className="message__sent-text pl-10">{user}</p>
-        </div>
     </section>
     )
   )
