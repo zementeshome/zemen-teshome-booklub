@@ -3,7 +3,7 @@ import queryString from 'query-string';
 import io from 'socket.io-client';
 import InfoBar from '../InfoBar/InfoBar';
 import MessageInput from '../MessageInput/MessageInput';
-import Messages from '../Messages/Messages';
+import DisplayMessages from '../DisplayMessages/DisplayMessages';
 import TextBox from '../TextBox/TextBox';
 import './Chat.scss';
 
@@ -61,7 +61,7 @@ useEffect(() => {
             <div className="chat__outer-container">
             <div className="chat__inner-container">
                 <InfoBar room={room}/>
-                <Messages messages={messages} name={name}/>
+                <DisplayMessages messages={messages} name={name}/>
                 <MessageInput message={message} setMessage={setMessage} sendMessage={sendMessage}/>
                 {/* <input className="chat__input" value={message} type="text" onChange={(e) => setMessage(e.target.value)} onKeyPress={e => e.key === 'enter' ? sendMessage(e) : null}/> */}
             </div>

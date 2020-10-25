@@ -193,8 +193,12 @@ class Form extends React.Component {
                 <label className="form__label" htmlFor="art">art/architecture</label>
                 </div>
                 <p className="form__subheading">let us know who some of your favourite authors are</p>
+                <div className="form__input-container">
                 <textarea className="form__input-authors" type="text" style={{fontFamily: 'Roboto', fontSize: '13px'}} required placeholder="if you don't have any please type n/a" value={this.state.authors} onChange={this.onAuthorChange}/>
+                </div>
+                <div className="form__button-container">
                 <button className="form__button" type="submit">submit</button>
+                </div>
                 </form>     
             </section>
             // form takes them to a page where they can join new klub
