@@ -7,6 +7,22 @@
     margin: 0 15vw 0 5vw;
     font-size: 14px;
 
+   &__header-container {
+       display: flex;
+   }
+
+   &__image {
+       @include mobile {
+           display: none;
+       }
+       @include tablet {
+        display:flex;
+        width: 100px;
+        margin-top: 2.05rem;
+        margin-left: 0;
+       }
+   }
+
     &__header {
         @include mobile {
             //FIXME: which one looks better roboto or prompt?

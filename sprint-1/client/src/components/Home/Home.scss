@@ -94,7 +94,7 @@
             justify-self: flex-start;  
             text-align: left;
             margin-left: 8.2vw;
-            margin-top: -1.5rem;
+            margin-top: -1rem;
             font-size: 10px;
         }
         @include tablet {
@@ -103,6 +103,18 @@
         }
         @include desktop {
             margin-left: 2.6vw;
+        }
+    }
+
+    &__image {
+        @include mobile {
+            display: none;
+        }
+        @include desktop {
+            display: flex;
+            width: 180%;
+            margin-left: 10vw;
+            margin-top: -5rem;
         }
     }
 
@@ -130,7 +142,7 @@
             display: flex;
             justify-content: flex-start;
             font-size: 30px;
-            color: black;
+            color: #B2B2B2;
             font-weight: normal;
             margin-top: 3rem;
         }

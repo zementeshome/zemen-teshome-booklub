@@ -81,7 +81,7 @@ function AddEvent() {
           <div className="addEvent__button-container">
           <button className="addEvent__button" onClick={handleClick}><span className="addEvent__add">add event</span></button>
           </div>
-          <img className="addEvent__image" src={process.env.PUBLIC_URL + '/assets/meeting2.jpg'} alt="virtual meeting clip art"/>
+          <img className="addEvent__image" src={process.env.PUBLIC_URL + '/assets/meeting-image.svg'} alt="virtual meeting illustration"/>
         </div>
     )
 }

@@ -8,7 +8,7 @@
         margin-top: 5rem;
         }
         @include desktop {
-                margin-top: 10rem;
+                margin-top: 2rem;
         }
 
     &__form {
@@ -22,7 +22,7 @@
     &__container {
             display:table-cell;
             text-align:center;
-            vertical-align:middle
+            vertical-align:middle;
 
     }
 

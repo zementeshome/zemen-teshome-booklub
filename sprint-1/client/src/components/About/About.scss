@@ -9,4 +9,16 @@
             width: 20%;
         }
     }
+
+    &__line {
+        @include mobile {
+            border-bottom: 1px solid black;
+            width: 80%;
+            display: inline-block;
+        }
+    }
+
+    &__image {
+        width: 50%;
+    }
 }

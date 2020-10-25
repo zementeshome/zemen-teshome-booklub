@@ -7,10 +7,12 @@ class About extends React.Component {
     return (
         <section className="about">
              <Link to="/home"><img className="about__logo" src={process.env.PUBLIC_URL + '/assets/logo1.svg'} alt="booklub logo"/></Link>
-            <h1>About</h1>
+             {/* <span className="about__line"></span> */}
+            <h1>about us</h1>
+            <p className="about__text">booklub is a klub, that's it!</p>
+            <img className="about__image" src={process.env.PUBLIC_URL + '/assets/book-icon.svg'} alt="book"/>
             </section>
     )
   }
 }
-//TODO: Need a back to home button
 export default About;

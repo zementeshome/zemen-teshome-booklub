@@ -109,7 +109,10 @@ class Form extends React.Component {
     render() {
         return (
             <section className="form">
+                <div className="form__header-container">
                 <h1 className="form__header">hello</h1>
+                <img className="form__image" src={process.env.PUBLIC_URL + '/assets/book-icon.svg'} alt="book"/>
+                </div>
                 {/* <button className="form__logout" onClick={this.handleLogout}>logout</button> */}
                 <p className="form__info">please fill out the form below so we can get to know you a little better.</p>
                 <form onSubmit={this.handleSubmit} name="form__container" action="" method="GET">
@@ -200,5 +203,7 @@ class Form extends React.Component {
 }
 
 //TODO: get rid of design spans
+//FIXME: what brings you and what is your purpose for joining this app, how many hours 
+
 
 export default Form;

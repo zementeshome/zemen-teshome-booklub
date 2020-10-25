@@ -108,7 +108,7 @@ class Home extends Component {
                <div className="home__text-container">
                <p className="home__text">welcome to booklub. we're here to connect you with like-minded readers and start your book club journey. please visit the klub page to meet your klub members. if you want to know more about how we run things, click here.</p>
                </div>
-               {/* <span className="home__text-line"></span> */}
+               <img className="home__image" src={process.env.PUBLIC_URL + '/assets/meeting-image.svg'} alt="virtual meeting illustration"/>
                </div>
                </div>
                <div className="home__right-container">
@@ -123,6 +123,7 @@ class Home extends Component {
                </div>
                </div>
                </div>
+            {/* <span className="home__text-line"></span> */}
              <SearchBooks />
            </section>
         )
