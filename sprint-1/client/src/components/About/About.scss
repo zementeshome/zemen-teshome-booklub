@@ -3,22 +3,96 @@
 @import '../../styles/partials/fonts';
 
 .about {
-    
-    &__logo {
+
+    &__container {
+        @include tablet {
+            display: flex;
+        }
+
+    }
+
+    &__header {
         @include mobile {
-            width: 20%;
+            color: #91badb;
+            font-weight: normal;
+            width: 100%;
+            text-align: center;
+            border-bottom: 1px solid black;
+            line-height: 0.1em;
+            margin: 10px 0 20px;
         }
     }
 
-    &__line {
+    &__header span {
         @include mobile {
-            border-bottom: 1px solid black;
-            width: 80%;
-            display: inline-block;
+            background: white;
+            padding: 0 10px;
+        }
+    }
+    
+    &__logo {
+        @include mobile {
+            width: 50px;
+            margin: auto;
+        }
+    }
+
+    // &__line {
+    //     @include mobile {
+    //         border-bottom: 1px solid black;
+    //         width: 80%;
+    //         display: inline-block;
+    //         margin-top: 1rem;
+    //     }
+    // }
+
+    &__image-container {
+        @include tablet {
+            width: 50%;
         }
     }
 
     &__image {
-        width: 50%;
+        @include mobile {
+            width: 200px;
+        }
+        @include tablet {
+            width: 300px;
+            margin-top: 2rem;
+        }
+        @include desktop {
+            margin-top: -1rem;
+        }
     }
+
+    &__text-container {
+        @include mobile {
+            margin-top: 2rem;
+        }
+        @include tablet {
+            // width: 320px;
+            width: 52%;
+            margin-top: 4rem;
+        }
+        @include desktop {
+            width: 50%;
+            margin-left: 5vw;
+        }
+    }
+
+    &__text-second,
+    &__text-third {
+        @include mobile {
+            margin: 1rem 3vw 1rem 3vw;
+        } 
+        @include tablet {
+            justify-content: flex-start; 
+            // width: 280px;
+        }
+    }
+
+    // &__text-first {
+
+    // }
+
 }
