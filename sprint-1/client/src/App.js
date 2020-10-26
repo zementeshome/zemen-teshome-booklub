@@ -4,13 +4,11 @@ import Login from './components/Login/Login';
 import Home from './components/Home/Home';
 import Form from './components/Form/Form';
 import Klub from './components/Klub/Klub';
-import About from './components/About/About';
-import Join from './components/Join/Join';
 import Chat from './components/Chat/Chat';
+import About from './components/About/About';
 import './App.css';
 
 function App() {
-
   return (
     <div className="App">
     <Router>
@@ -19,7 +17,6 @@ function App() {
        <Route path="/home" component={Home}></Route>
        <Route path="/form" component={Form}></Route>
        <Route path="/klub" component={Klub}></Route>
-       <Route path="/join" component={Join}></Route>
        <Route path="/chat" component={Chat}></Route>
        <Route path="/about" component={About}></Route>
     </Switch>
@@ -27,5 +24,4 @@ function App() {
     </div>
   );
 }
-
 export default App;

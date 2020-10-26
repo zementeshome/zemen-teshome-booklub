@@ -44,7 +44,7 @@
             justify-content: flex-start;
             margin-left: 8vw;
             font-size: 30px;
-            color: #91badb;
+            color: $font-color-3;
             font-weight: normal;
     }
         @include tablet {
@@ -58,7 +58,7 @@
     &__line {
         @include mobile {
             display: inline-flex;
-            border-top: 2px solid black;
+            border-top: 2px solid $primary-color;
             width: 80%;
         }
         @include tablet {
@@ -123,7 +123,7 @@
             display: none;
         }
         @include tablet {
-        border-bottom: 2px solid black;
+        border-bottom: 2px solid $primary-color;
         width: 70%;
         margin-right: 5vw;
         display: inline-block;
@@ -142,7 +142,7 @@
             display: flex;
             justify-content: flex-start;
             font-size: 30px;
-            color: #91badb;
+            color: $font-color-3;
             font-weight: normal;
             margin-top: 3rem;
         }

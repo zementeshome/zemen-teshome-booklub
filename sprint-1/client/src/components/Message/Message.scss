@@ -12,10 +12,10 @@
 
     &__box {
         @include mobile {
-            background: #f3f3f3;
+            background: $chat;
             border-radius: 20px;
             padding: 2px 20px;
-            color: white;
+            color: $primary-color;
             display: inline-block;
             max-width: 80%;
         }
@@ -58,7 +58,7 @@
 }
 
 .colorWhite {
-    color: white;
+    color: $primary-color;
 }
 
 .colorDark {
@@ -66,9 +66,9 @@
 }
 
 .backgroundBlue {
-    background: #b2badb;
+    background: $font-color-3;
 }
 
 .backgroundLight {
-    background: #f3f3f3;
+    background: $chat;
 }

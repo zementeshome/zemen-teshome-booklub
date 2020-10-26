@@ -64,9 +64,9 @@
         @include mobile {
             width: 16px;
             height: 16px;
-            border: 1px solid black;
+            border: 1px solid $primary-color;
             border-radius: 100%;
-            outline: black;
+            outline: $primary-color;
             
         }
     }
@@ -83,7 +83,7 @@
             width: 300px;
             height: 50px;
             outline: none;
-            border: 1px solid black;
+            border: 1px solid $primary-color;
         }
         @include tablet {
             width: 300px;
@@ -100,9 +100,9 @@
     &__button {
         @include mobile {
             outline: none;
-            border: 1px solid black;
-            background-color: black;
-            color: white;
+            border: 1px solid $primary-color;
+            background-color: $primary-color;
+            color: $font-color-1;
             height: 30px;
             width: 50px;
             font-size: 12px;
@@ -125,11 +125,11 @@ input[type='radio']:after {
     top: -2px;
     left: -1px;
     position: relative;
-    background-color: #d1d3d1;
+    background-color: $font-color-2;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 2px solid white;
+    border: 2px solid $font-color-1;
 }
 
 input[type='radio']:checked:after {
@@ -139,31 +139,31 @@ input[type='radio']:checked:after {
     top: -2px;
     left: -1px;
     position: relative;
-    background-color: black;
+    background-color: $primary-color;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 2px solid white;
+    border: 2px solid $font-color-1;
 }
 
 input[type='checkbox']:after {
     width: 15px;
     height: 15px;
-    background-color: #d1d3d1;
+    background-color: $font-color-2;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 2px solid white;
+    border: 2px solid $font-color-1;
 }
 
 input[type='checkbox']:checked:after {
     width: 15px;
     height: 15px;
-    background-color: black;
+    background-color: $primary-color;
     content: '';
     display: inline-block;
     visibility: visible;
-    border: 2px solid white;
+    border: 2px solid $font-color-1;
 }
 
 ::placeholder {

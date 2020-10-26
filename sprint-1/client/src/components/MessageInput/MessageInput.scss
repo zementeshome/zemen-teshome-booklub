@@ -9,7 +9,7 @@
     &__form {
         @include mobile {
             display: flex;
-            border-top: 1px solid black;
+            border-top: 1px solid $primary-color;
             // border-bottom: 1px solid black;
             // height: 5px;
         }
@@ -36,7 +36,7 @@
     }
 
     &__button {
-       color: #fff !important;
+       color: $font-color-1 !important;
        text-decoration: none;
        background: black;
     //    padding: 20px;

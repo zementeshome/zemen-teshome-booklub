@@ -30,7 +30,7 @@
         justify-content: center;
         margin-left: 5vw;
         font-weight: normal;
-        color: #91badb;
+        color: $font-color-3;
         }
         @include desktop {
             font-size: 25px;
@@ -46,7 +46,7 @@
             width: 280px;
             margin: auto;
             margin-top: 2rem;
-            border-left: 1px solid #b2b2b2;     
+            border-left: 1px solid $font-color-2;     
         }
         @include desktop {
             width: 400px;
@@ -89,8 +89,8 @@
         @include mobile {
     width: 100px;
     height: 30px;
-  border: 1px solid black;
-  font-famiy: 'Roboto';
+  border: 1px solid $primary-color;
+  font-family: 'Roboto';
   font-weight: bold;
   border-radius: 5px;
   font-size: 12px;
@@ -103,12 +103,13 @@
   z-index: 0;
   transition: 1s;
   margin-top: 2rem;
+  outline:none;
         }
         }
         &__button::before,
         &__button::after {
             position: absolute;
-            background:  #91badb;
+            background: $font-color-3;
             width: 100px;
             height: 30px;
             border-radius: 5px;
@@ -139,16 +140,16 @@
 
         &__button:hover::before {
             width: 0px;
-            background: #fff;
+            background: $font-color-1;
         }
 
         &__button:hover::after {
             height: 0px;
-            background: #fff;
+            background: $font-color-1;
         }
 
         &__button:hover {
-            background: #fff;
+            background: $font-color-1;
         }
 
         &__image {
