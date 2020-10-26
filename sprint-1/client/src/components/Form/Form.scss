@@ -25,15 +25,12 @@
 
     &__header {
         @include mobile {
-            //FIXME: which one looks better roboto or prompt?
-            //  font-family: 'Prompt';
              font-weight: 400;
              font-size: 50px;
              letter-spacing: 0.5px;
              display: flex;
              justify-content: flex-start;
              margin-bottom: -1vh;
-            //  margin-left: 5vw;
         }
     }
 
@@ -115,8 +112,6 @@
     }
 
 }
-
-//TODO: figure out padding between button and label & needs an image
 
 input[type='radio']:after {
     width: 15px;

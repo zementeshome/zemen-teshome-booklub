@@ -21,7 +21,9 @@ function AddEvent() {
             scope: SCOPES
         })
         
-        gapi.client.load('calendar', 'v3', () => console.log('it works'))
+        gapi.client.load('calendar', 'v3')
+
+        // gapi.client.load('calendar', 'v3', () => console.log('it works'))
 
         gapi.auth2.getAuthInstance().signIn()
         .then(() => {
@@ -57,9 +59,7 @@ function AddEvent() {
               })
 
               request.execute(event => {
-                // console.log(event)
                   window.open(event.htmlLink)
-                  // or window.open
               })
         })
     })
@@ -67,28 +67,28 @@ function AddEvent() {
     return (
         <div className="addEvent">
            <div className="addEvent__main-container">
-          <div className="addEvent__left-container">
-          <h1 className="addEvent__header">tips to make your klub run smoothly:</h1>
-          <div className="addEvent__container">
-          <ul className="addEvent__list">
-          <li className="addEvent__list-item"><FaBookOpen/> after getting to know each choose a moderator</li>
-          <li className="addEvent__list-item"><FaBookOpen/> stay on the same page</li>
-          <li className="addEvent__list-item"><FaBookOpen/> remember that the purpose of this klub is to read and enjoy yourselves</li>
-          <li className="addEvent__list-item"><FaBookOpen/> give your discussions structure</li>
-          <li className="addEvent__list-item"><FaBookOpen/> give everyone a chance to be heard and have their book of choice nominated</li>
-          <li className="addEvent__list-item"><FaBookOpen/> meetings should start on time and can be organized through google calendar below</li>
-          </ul>
-          </div>
-          <div className="addEvent__button-container">
-          <button className="addEvent__button" onClick={handleClick}><span className="addEvent__add">add event</span></button>
-          </div>
-          </div>
-          <div className="addEvent__right-container">
-          <img className="addEvent__image" src={process.env.PUBLIC_URL + '/assets/meeting-image.svg'} alt="virtual meeting illustration"/>
-          </div>
-          </div>
+           <div className="addEvent__left-container">
+              <h1 className="addEvent__header">tips to make your klub run smoothly:</h1>
+        <div className="addEvent__container">
+            <ul className="addEvent__list">
+              <li className="addEvent__list-item"><FaBookOpen/> after getting to know each choose a moderator</li>
+              <li className="addEvent__list-item"><FaBookOpen/> stay on the same page</li>
+              <li className="addEvent__list-item"><FaBookOpen/> remember that the purpose of this klub is to read and enjoy yourselves</li>
+              <li className="addEvent__list-item"><FaBookOpen/> give your discussions structure</li>
+              <li className="addEvent__list-item"><FaBookOpen/> give everyone a chance to be heard and have their book of choice nominated</li>
+              <li className="addEvent__list-item"><FaBookOpen/> meetings should start on time and can be organized through google calendar below</li>
+           </ul>
         </div>
-    )
+        <div className="addEvent__button-container">
+            <button className="addEvent__button" onClick={handleClick}><span className="addEvent__add">add event</span></button>
+        </div>
+        </div>
+        <div className="addEvent__right-container">
+            <img className="addEvent__image" src={process.env.PUBLIC_URL + '/assets/meeting-image.svg'} alt="virtual meeting illustration"/>
+        </div>
+      </div>
+    </div>
+  )
 }
 
 export default AddEvent;

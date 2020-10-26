@@ -8,8 +8,8 @@
         @include tablet {
             display: flex;
         }
-
     }
+
     &__header {
         @include mobile {
             color: $font-color-3;
@@ -35,15 +35,6 @@
             margin: auto;
         }
     }
-
-    // &__line {
-    //     @include mobile {
-    //         border-bottom: 1px solid black;
-    //         width: 80%;
-    //         display: inline-block;
-    //         margin-top: 1rem;
-    //     }
-    // }
 
     &__image-container {
         @include tablet {
@@ -86,12 +77,6 @@
         } 
         @include tablet {
             justify-content: flex-start; 
-            // width: 280px;
         }
     }
-
-    // &__text-first {
-
-    // }
-
 }

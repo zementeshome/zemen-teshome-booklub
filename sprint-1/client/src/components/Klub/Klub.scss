@@ -8,8 +8,6 @@
     &__logo {
         @include mobile {
             width: 50px;
-            // display: flex;
-            // justify-content: space-evenly;
         }
     }
 
@@ -20,8 +18,6 @@
             justify-content: center;
             margin-top: 1rem;
             font-weight: normal;
-            // margin-left: 5vw;
-            // width: 280px;
         }
         @include desktop {
             font-size: 40px;
@@ -32,12 +28,12 @@
         @include mobile {
             display: flex;
             justify-content: center;
-            // margin-left: 5vw;
             margin-top: -1rem;
             font-size: 15px;
         }
         @include desktop {
             font-size: 20px;
+            padding-right: 1rem;
         }
     }
 }

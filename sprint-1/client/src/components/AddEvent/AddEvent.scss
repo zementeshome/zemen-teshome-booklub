@@ -25,16 +25,15 @@
 
     &__header {
         @include mobile {
-        font-size: 16px;
-        display: flex;
-        justify-content: center;
-        margin-left: 5vw;
-        font-weight: normal;
-        color: $font-color-3;
+            font-size: 16px;
+            display: flex;
+            justify-content: center;
+            margin-left: 5vw;
+            font-weight: normal;
+            color: $font-color-3;
         }
         @include desktop {
             font-size: 25px;
-            // margin-left: 1rem;
             justify-content: flex-start;
             margin-left: 10vw;
             margin-top: 2rem;
@@ -52,8 +51,6 @@
             width: 400px;
             margin: 0;
             margin: 2rem 0 0 10vw;
-            // display: flex;
-            // justify-content: flex-start;
         }
     }
 
@@ -76,8 +73,8 @@
 
     &__button-container {
         @include mobile {
-     display: flex;
-     justify-content: center;
+            display: flex;
+            justify-content: center;
         }
         @include desktop {
             justify-content: flex-start;
@@ -87,25 +84,26 @@
 
     &__button {
         @include mobile {
-    width: 100px;
-    height: 30px;
-  border: 1px solid $primary-color;
-  font-family: 'Roboto';
-  font-weight: bold;
-  border-radius: 5px;
-  font-size: 12px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  z-index: 0;
-  transition: 1s;
-  margin-top: 2rem;
-  outline:none;
+            width: 100px;
+            height: 30px;
+            border: 1px solid $primary-color;
+            font-family: 'Roboto';
+            font-weight: bold;
+            border-radius: 5px;
+            font-size: 12px;
+            cursor: pointer;
+            -webkit-tap-highlight-color: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 0;
+            transition: 1s;
+            margin-top: 2rem;
+            outline:none;
+          }
         }
-        }
+
         &__button::before,
         &__button::after {
             position: absolute;
@@ -131,10 +129,10 @@
 
         &__add {
             -webkit-touch-callout: none;
-    -webkit-user-select: none;
-     -khtml-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
+            -webkit-user-select: none;
+            -khtml-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
             user-select: none;
         }
 
@@ -161,4 +159,4 @@
                 margin-top: -3rem;
             }
         }
-}
+    }

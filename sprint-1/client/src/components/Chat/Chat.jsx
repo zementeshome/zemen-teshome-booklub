@@ -44,18 +44,12 @@ useEffect(() => {
     });
 }, []);
 
-    // function for sending messages
-
     const sendMessage = (e) => {
         e.preventDefault();
         if(message) {
             socket.emit('sendMessage', message, () => setMessage(''));
         }
     }
-
-    console.log(message, messages);
-
-
     return (
         <section className="chat">
             <div className="chat__outer-container">
@@ -63,12 +57,10 @@ useEffect(() => {
                 <InfoBar room={room}/>
                 <DisplayMessages messages={messages} name={name}/>
                 <MessageInput message={message} setMessage={setMessage} sendMessage={sendMessage}/>
-                {/* <input className="chat__input" value={message} type="text" onChange={(e) => setMessage(e.target.value)} onKeyPress={e => e.key === 'enter' ? sendMessage(e) : null}/> */}
             </div>
-            <TextBox users={users}/>
+                <TextBox users={users}/>
             </div>
-        </section>
-        
+        </section>  
     )
 }
 
