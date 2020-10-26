@@ -96,6 +96,11 @@ class Home extends Component {
 
 
     render() {
+
+        // let Component = React.createClass({
+        //     render: function() {
+        //         let link = <a href={this.makeHref('klubPage')}>klub</a>
+
         return (
            <section className="home">
                <Header handleLogout={this.handleLogout}/>
@@ -127,6 +132,9 @@ class Home extends Component {
              <SearchBooks />
            </section>
         )
+
+//     }  
+// })
     }
 }
 

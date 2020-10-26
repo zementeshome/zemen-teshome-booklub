@@ -26,23 +26,22 @@ function AddEvent() {
         gapi.auth2.getAuthInstance().signIn()
         .then(() => {
             let event = {
-                'summary': 'Google I/O 2015',
-                'location': '800 Howard St., San Francisco, CA 94103',
-                'description': 'A chance to hear more about Google\'s developer products.',
+                'summary': 'booklub meeting',
+                'location': 'virtual',
+                'description': 'first meeting',
                 'start': {
-                  'dateTime': '2015-05-28T09:00:00-07:00',
-                  'timeZone': 'America/Los_Angeles'
+                  'dateTime': '2020-11-05T13:00:00-01:00',
+                  'timeZone': 'America/Toronto'
                 },
                 'end': {
-                  'dateTime': '2015-05-28T17:00:00-07:00',
-                  'timeZone': 'America/Los_Angeles'
+                  'dateTime': '2020-11-05T17:00:00-01:00',
+                  'timeZone': 'America/Toronto'
                 },
                 'recurrence': [
-                  'RRULE:FREQ=DAILY;COUNT=2'
+                  'RRULE:FREQ=MONTHLY;COUNT=1'
                 ],
                 'attendees': [
-                  {'email': 'lpage@example.com'},
-                  {'email': 'sbrin@example.com'}
+                  {'email': 'random@gmail.com'},
                 ],
                 'reminders': {
                   'useDefault': false,
