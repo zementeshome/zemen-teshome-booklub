@@ -32,7 +32,7 @@ const [apiKey, setApiKey] = useState('AIzaSyD711ZoA7Yy6HWyZ0lJxDASNR9uJYEOcXc')
             <div className="search__container">
                 <label className="search__label" htmlFor="search__input">
                        <input className="search__input" type="text" autoComplete="off" onChange={handleChange}/></label><br />
-                       <button className="search__button" type="submit">search</button>
+                       <button className="search__button" type="submit">search for books</button>
                        </div>
                </form>
                {result.map(book => (

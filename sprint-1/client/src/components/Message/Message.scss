@@ -6,7 +6,7 @@
     @include mobile {
         display: flex;
         justify-content: flex-end;
-        padding: 0 5%;
+        padding: 5px 2%;
         margin-top: 3px;
     }
 
@@ -14,7 +14,7 @@
         @include mobile {
             background: #f3f3f3;
             border-radius: 20px;
-            padding: 5px 20px;
+            padding: 2px 20px;
             color: white;
             display: inline-block;
             max-width: 80%;
@@ -66,7 +66,7 @@
 }
 
 .backgroundBlue {
-    background: #2979FF;
+    background: #b2badb;
 }
 
 .backgroundLight {

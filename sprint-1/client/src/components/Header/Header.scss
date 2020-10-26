@@ -50,6 +50,11 @@
         }
     }
 
+    &__nav-list-item:hover,
+    &__logout:hover {
+        color: #91badb;
+    }
+
     &__logout {
         @include mobile {
             outline: none;
