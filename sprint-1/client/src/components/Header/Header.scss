@@ -31,6 +31,10 @@
         }
         @include tablet {
             margin-top: -2.7rem;
+            margin-right: 4vw;
+        }
+        @include desktop {
+            margin-right: 3vw;
         }
     }
 

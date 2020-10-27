@@ -103,7 +103,7 @@ class Form extends React.Component {
             </div>
                    <p className="form__info">please fill out the form below so we can get to know you a little better.</p>
             <form onSubmit={this.handleSubmit} name="form__container" action="" method="GET">
-                   <p className="form__subheading">how many hours a week to do you spend reading?</p>
+                   <p className="form__subheading">how many hours a week do you spend reading?</p>
             <div className="form__box">
                   <input className="form__input" type="radio" name="radAnswer" value="0" onChange={this.onChange}/>
                   <label className="form__label" htmlFor="zero">0</label>

@@ -1,0 +1,27 @@
+[debug] [2020-10-27T15:39:18.260Z] ----------------------------------------------------------------------
+[debug] [2020-10-27T15:39:18.263Z] Command:       /usr/local/bin/node /usr/local/bin/firebase deploy --only hosting
+[debug] [2020-10-27T15:39:18.263Z] CLI Version:   8.12.1
+[debug] [2020-10-27T15:39:18.264Z] Platform:      darwin
+[debug] [2020-10-27T15:39:18.264Z] Node Version:  v12.18.3
+[debug] [2020-10-27T15:39:18.265Z] Time:          Tue Oct 27 2020 11:39:18 GMT-0400 (Eastern Daylight Time)
+[debug] [2020-10-27T15:39:18.265Z] ----------------------------------------------------------------------
+[debug] [2020-10-27T15:39:18.265Z] 
+[debug] [2020-10-27T15:39:18.275Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-10-27T15:39:18.275Z] > authorizing via signed-in user
+[debug] [2020-10-27T15:39:18.275Z] [iam] checking project booklub-capstone for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2020-10-27T15:39:18.280Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/booklub-capstone:testIamPermissions  
+ {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2020-10-27T15:39:18.583Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 27 Oct 2020 15:39:18 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","server-timing":"gfet4t7; dur=174","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-10-27T15:39:18.585Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/booklub-capstone  
+ 
+[debug] [2020-10-27T15:39:18.722Z] <<< HTTP RESPONSE 200 {"content-type":"application/json; charset=UTF-8","vary":"X-Origin, Referer, Origin,Accept-Encoding","date":"Tue, 27 Oct 2020 15:39:18 GMT","server":"ESF","cache-control":"private","x-xss-protection":"0","x-frame-options":"SAMEORIGIN","x-content-type-options":"nosniff","alt-svc":"h3-Q050=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000,h3-T051=\":443\"; ma=2592000,h3-T050=\":443\"; ma=2592000,h3-Q046=\":443\"; ma=2592000,h3-Q043=\":443\"; ma=2592000,quic=\":443\"; ma=2592000; v=\"46,43\"","accept-ranges":"none","transfer-encoding":"chunked"}
+[debug] [2020-10-27T15:39:18.856Z] TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received undefined
+    at validateString (internal/validators.js:120:11)
+    at Object.join (path.js:1039:7)
+    at Object.checkFunctionsSDKVersion [as fn] (/usr/local/lib/node_modules/firebase-tools/lib/checkFirebaseSDKVersion.js:34:28)
+    at Command.<anonymous> (/usr/local/lib/node_modules/firebase-tools/lib/command.js:164:30)
+    at Generator.next (<anonymous>)
+    at fulfilled (/usr/local/lib/node_modules/firebase-tools/lib/command.js:5:58)
+    at processTicksAndRejections (internal/process/task_queues.js:97:5)
+[error] 
+[error] Error: An unexpected error has occurred.
