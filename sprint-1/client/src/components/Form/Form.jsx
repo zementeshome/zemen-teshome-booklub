@@ -124,7 +124,7 @@ class Form extends React.Component {
                 <input className="form__input" type="radio" name="radAnswer2" value="15+" onChange={this.onChange}/>
                 <label className="form__label" htmlFor="fifteenPlus">15+</label>
             </div>
-                <p className="form__subheading">what are you looking for?</p>
+                <p className="form__subheading">why did you join booklub?</p>
             <div className="form__box">
                 <input className="form__input" type="radio" name="radAnswer2"  value="to get into reading" onChange={this.onPurposeChange}/>
                 <label className="form__label" htmlFor="getInto">to get into reading</label>
@@ -190,8 +190,4 @@ class Form extends React.Component {
    )
   }
 }
-
-//FIXME: what brings you and what is your purpose for joining this app, how many hours 
-
-
 export default Form;

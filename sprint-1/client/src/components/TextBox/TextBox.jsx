@@ -21,8 +21,8 @@ function TextBox( {users} ) {
                     </div>
                   )
                   : null
-              }
-            </div>
+               }
+          </div>
     )
 }
 

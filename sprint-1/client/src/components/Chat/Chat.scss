@@ -4,13 +4,24 @@
 
 .chat {
 
+    background-color: $font-color-3;
+
+    &__logo {
+        @include mobile {
+            width: 50px;
+            margin: auto;
+            margin-top: 1rem;
+        }
+    }
+
     &__outer-container {
         @include mobile {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: $font-color-3; // or b2badb
+            margin-top: -2rem;
+            background-color: $font-color-3;
         }
     }
 
@@ -24,7 +35,7 @@
             height: 60%;
             width: 300px;
             margin-left: 5vw;
-            border: 1px solid $primary-color;
+            border: 2px solid $primary-color;
         }
         @include tablet {
             width: 500px;

@@ -5,10 +5,10 @@
 .search {
 
         @include tablet {
-        margin-top: 5rem;
-        }
+            margin-top: 5rem;
+       }
         @include desktop {
-                margin-top: 2rem;
+            margin-top: 2rem;
         }
 
     &__form {
@@ -17,17 +17,15 @@
             width:100%;
             height:100%;
             margin-top: 1rem;
-    }
+        }
 
     &__container {
             display:table-cell;
             text-align:center;
             vertical-align:middle;
-
-    }
+         }
 
     &__label {
-
             display: inline-block;
             position: relative;
             height: 35px;
@@ -39,8 +37,7 @@
             border-radius: 25px;
             transition: all 200ms ease;
             cursor: text;  
-    
-    }
+         }
 
     &__label:after  {
             content: "";
@@ -53,7 +50,7 @@
             border-radius: 3px;
             transform: rotate(-45deg);
             transition: all 200ms ease; 
-    }
+        }
 
     &__label.active,
     &__label:hover {
@@ -64,7 +61,7 @@
             height: 0px;
         }
     }
-//FIXME: padding for input text
+
     &__input {
             width: 100%;
             border: none;
@@ -74,7 +71,7 @@
             color: inherit;
             background: transparent;
             outline-width: 0px; 
-    }
+          }
 
     &__button {
             outline: none;
@@ -89,5 +86,5 @@
             padding-bottom: 4px;
             margin-top: 1rem;
             margin-bottom: 1rem;
+        }
     }
-}

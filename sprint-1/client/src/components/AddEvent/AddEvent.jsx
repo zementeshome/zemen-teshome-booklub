@@ -8,11 +8,10 @@ function AddEvent() {
     let CLIENT_ID = "345527721227-14s99r64u63br5634e1csvvcqcnnecbe.apps.googleusercontent.com"
     let API_KEY = "AIzaSyC2tqnocECgB7xT5F3NrYODL3NHRyh-VYE"
     let DISCOVERY_DOCS = ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"];
-    let SCOPES = "https://www.googleapis.com/auth/calendar.events";
+    let SCOPES = "https://www.googleapis.com/auth/calendar";
 
     const handleClick = () => {
         gapi.load(`client:auth2`, () => {
-            console.log('client loaded')
         
         gapi.client.init({
             apiKey: API_KEY,
@@ -22,8 +21,6 @@ function AddEvent() {
         })
         
         gapi.client.load('calendar', 'v3')
-
-        // gapi.client.load('calendar', 'v3', () => console.log('it works'))
 
         gapi.auth2.getAuthInstance().signIn()
         .then(() => {

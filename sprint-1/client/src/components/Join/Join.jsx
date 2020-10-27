@@ -12,18 +12,18 @@ const [room, setRoom] = useState('');
             <div className="join__inner-container">
                 <h1 className="join__header">get to know your klub members below</h1>
                 <p className="join__header-text">please join the same room</p>
-                <div>
-                    <input placeholder="name" className="join__input" type="text" onChange={(e) => setName(e.target.value)} />
-                    </div>
-                <div>
-                    <input placeholder="room" className="join__input" value={room} onChange={(e) => setRoom(e.target.value)} />
-                    </div>
+            <div>
+                <input placeholder="name" className="join__input" type="text" onChange={(e) => setName(e.target.value)} />
+            </div>
+            <div>
+                <input placeholder="room" className="join__input" value={room} onChange={(e) => setRoom(e.target.value)} />
+            </div>
                 <Link onClick={event => (!name || !room) ? event.preventDefault() : null} to={`/chat?name=${name}&room=${room}`}>
                 <button className="join__button" type="submit">sign in</button>
                 </Link>
             </div>
-            </div>
-        </section>
+          </div>
+       </section>
     )
 }
 

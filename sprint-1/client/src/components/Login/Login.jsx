@@ -4,7 +4,7 @@ import './Login.scss';
 import fire from '../../fire';
 
 function Login() {
-  const [user, setUser] = useState('');
+  const [, setUser] = useState('');
   const [firstName, setFirstName] = useState('')
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('');

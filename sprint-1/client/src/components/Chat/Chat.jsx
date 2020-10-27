@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import queryString from 'query-string';
 import io from 'socket.io-client';
 import InfoBar from '../InfoBar/InfoBar';
@@ -19,15 +20,11 @@ const ENDPOINT = 'localhost:8000';
 
 useEffect(() => {
     const { name, room } = queryString.parse(location.search);
-
     socket = io(ENDPOINT);
-
     setName(name);
     setRoom(room);
-
     socket.emit('join', { name, room }, () => {
-
-    })
+ })
     return () => {
         socket.emit('disconnect');
         socket.off();
@@ -38,7 +35,6 @@ useEffect(() => {
     socket.on('message', message => {
       setMessages(messages => [ ...messages, message ]);
     });
-    
     socket.on("roomData", ({ users }) => {
       setUsers(users);
     });
@@ -52,6 +48,7 @@ useEffect(() => {
     }
     return (
         <section className="chat">
+            <Link to="/home"><img className="chat__logo" src={process.env.PUBLIC_URL + '/assets/logo1-transparent.png'} alt="booklub logo"/></Link>
             <div className="chat__outer-container">
             <div className="chat__inner-container">
                 <InfoBar room={room}/>

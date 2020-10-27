@@ -3,14 +3,9 @@ import axios from 'axios';
 import './SearchBooks.scss';
 
 function SearchBooks() {
-
-// const [user, setUser] = useState('');
-
-     //GET https://www.googleapis.com/books/v1/volumes/zyTCAlFPjgYC?key=AIzaSyD711ZoA7Yy6HWyZ0lJxDASNR9uJYEOcXc
-
 const [book, setBook] = useState('');
 const [result, setResult] = useState([]);
-const [apiKey, setApiKey] = useState('AIzaSyD711ZoA7Yy6HWyZ0lJxDASNR9uJYEOcXc')
+const [apiKey, ] = useState('AIzaSyD711ZoA7Yy6HWyZ0lJxDASNR9uJYEOcXc')
 
   const handleChange = (e) => {
         const book = e.target.value
@@ -25,7 +20,7 @@ const [apiKey, setApiKey] = useState('AIzaSyD711ZoA7Yy6HWyZ0lJxDASNR9uJYEOcXc')
         setResult(data.data.items)
         })
     }
-
+    
     return (
         <section className="search">
             <form className="search__form" onSubmit={handleSubmit}>
