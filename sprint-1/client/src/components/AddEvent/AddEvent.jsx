@@ -29,11 +29,11 @@ function AddEvent() {
                 'location': 'virtual',
                 'description': 'first meeting',
                 'start': {
-                  'dateTime': '2020-11-05T13:00:00-01:00',
+                  'dateTime': '2020-11-20T13:00:00-01:00',
                   'timeZone': 'America/Toronto'
                 },
                 'end': {
-                  'dateTime': '2020-11-05T17:00:00-01:00',
+                  'dateTime': '2020-11-20T17:00:00-01:00',
                   'timeZone': 'America/Toronto'
                 },
                 'recurrence': [
@@ -70,7 +70,7 @@ function AddEvent() {
             <ul className="addEvent__list">
               <li className="addEvent__list-item"><FaBookOpen/> after getting to know each choose a moderator</li>
               <li className="addEvent__list-item"><FaBookOpen/> stay on the same page</li>
-              <li className="addEvent__list-item"><FaBookOpen/> remember that the purpose of this klub is to read and enjoy yourselves</li>
+              <li className="addEvent__list-item"><FaBookOpen/> remember that the purpose of this club is to read and enjoy yourselves</li>
               <li className="addEvent__list-item"><FaBookOpen/> give your discussions structure</li>
               <li className="addEvent__list-item"><FaBookOpen/> give everyone a chance to be heard and have their book of choice nominated</li>
               <li className="addEvent__list-item"><FaBookOpen/> meetings should start on time and can be organized through google calendar below</li>
@@ -81,7 +81,7 @@ function AddEvent() {
         </div>
         </div>
         <div className="addEvent__right-container">
-            <img className="addEvent__image" src={process.env.PUBLIC_URL + '/assets/meeting-image.svg'} alt="virtual meeting illustration"/>
+            <img className="addEvent__image" src={process.env.PUBLIC_URL + '/assets/meeting-icon-blue.jpg'} alt="virtual meeting illustration"/>
         </div>
       </div>
     </div>

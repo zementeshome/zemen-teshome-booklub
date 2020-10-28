@@ -33,7 +33,7 @@ class Form extends React.Component {
         if(e.target.checked){
             genres.push(e.target.value);
         }else{
-            const index= genres.findIndex(g=>g === e.target.value)
+            const index = genres.findIndex(g=>g === e.target.value)
             if(index>-1){
                 genres.splice(index,1);
             }
@@ -53,15 +53,14 @@ class Form extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        console.log(fire.auth().currentUser)
         this.setState({
             ...this.state,
             userId: fire.auth().currentUser.email
         })
-        db.collection('booklub-users').add({...this.state, userId: fire.auth().currentUser.email}).then(() => {
-        this.addUserToKlub()
+            db.collection('booklub-users').add({...this.state, userId: fire.auth().currentUser.email}).then(() => {
+            this.addUserToKlub()
         })
-        this.props.history.push('/home');
+            this.props.history.push('/home');
     }
 
     addUserToKlub = () => {
@@ -70,7 +69,6 @@ class Form extends React.Component {
             querySnapshot.forEach((doc) => {
                 klubs.push({id: doc.id, data: doc.data()});
             });
-            console.log(klubs);
             if (klubs && klubs.length > 0) {
                 let minUsers = klubs[0].data.users?.length || 0
                 let klubIndex = 0
@@ -82,7 +80,6 @@ class Form extends React.Component {
                 let klubToModify = klubs[klubIndex]
                 let users = klubToModify?.data.users??[]
                 users.push(fire.auth().currentUser.displayName)
-                console.log(users, 'updated users')
                 db.collection('klubs').doc(klubs[klubIndex].id).update({users: users}).then(() => {
                     db.collection('booklub-users').where('userId', '==', this.user.email).get().then((querySnapshot) => {
                         querySnapshot.forEach((doc) =>{

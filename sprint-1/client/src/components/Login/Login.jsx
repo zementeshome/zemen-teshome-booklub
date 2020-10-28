@@ -31,7 +31,6 @@ function Login() {
 
   const handleLogin = (e) => {
     e.preventDefault();
-    console.log(fire.auth().currentUser)
     clearErrors();
     fire
       .auth()
@@ -60,7 +59,6 @@ function Login() {
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then((userInfo) => {
-        console.log('successful login');
         fire.auth().currentUser.updateProfile({displayName: `${firstName}`}).then(() => {
           history.push('/form')
         })

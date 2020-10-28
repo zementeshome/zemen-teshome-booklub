@@ -16,7 +16,6 @@ const [apiKey, ] = useState('AIzaSyD711ZoA7Yy6HWyZ0lJxDASNR9uJYEOcXc')
         e.preventDefault()
         axios.get("https://www.googleapis.com/books/v1/volumes?q="+book+"&key="+apiKey+"&maxResults=40")
         .then(data => {
-            console.log(data.data.items)
         setResult(data.data.items)
         })
     }

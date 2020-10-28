@@ -19,9 +19,9 @@ class Home extends Component {
                <div className="home__container">
                   <h1 className="home__header">hey {fire.auth().currentUser?.displayName},</h1>
                <div className="home__text-container">
-                  <p className="home__text">welcome to booklub. we're here to help you start your book club journey! please visit the klub page to meet your klub members or visit the about page to find out more about how we run things around here.</p>
+                  <p className="home__text">welcome to booklub. we're here to help you start your book club journey! please visit the klub page to meet your club members or visit the about page to find out more about how we run things around here.</p>
                </div>
-                  <img className="home__image" src={process.env.PUBLIC_URL + '/assets/girl-icon.svg'} alt="girl reading illustration"/>
+                  <img className="home__image" src={process.env.PUBLIC_URL + '/assets/girl-icon-blue.jpg'} alt="girl reading illustration"/>
                </div>
                </div>
                <div className="home__right-container">

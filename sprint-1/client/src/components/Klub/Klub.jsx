@@ -10,7 +10,7 @@ class Klub extends React.Component {
     state = {
         users: []
     }
-
+    
     user = fire.auth().currentUser
     
     componentDidMount() {
@@ -23,13 +23,10 @@ class Klub extends React.Component {
 
     displayKlub = () => {
         db.collection('booklub-users').where('userId', '==', this.user?.email).get().then((querySnapshot) => {
-            console.log(querySnapshot)
             querySnapshot.forEach((doc) =>{
               let klub = doc.data().klub
-              console.log(klub)
               db.collection('klubs').doc(klub).get().then((doc) => {
                     if (doc.exists) {
-                console.log(doc.data())
                       this.setState({
                           users: [...doc.data().users]
                         })
@@ -44,8 +41,8 @@ class Klub extends React.Component {
                 <Link to="/home"><img className="klub__logo" src={process.env.PUBLIC_URL + '/assets/logo1.svg'} alt="booklub logo"/></Link>
                 <h1 className="klub__header">welcome,</h1>
             <div className="klub__members">
-                {this.state.users?.map((user) => 
-                    <p className="klub__member-name" key={user.id}><FaRegUserCircle style={{width: '40%'}}/> {user}</p>
+                {this.state.users?.map((user, id) => 
+                    <p className="klub__member-name" key={id}><FaRegUserCircle style={{width: '40%'}}/> {user}</p>
                 )}
             </div>
                <AddEvent />
