@@ -68,7 +68,7 @@ function AddEvent() {
               <h1 className="addEvent__header">tips to make your klub run smoothly:</h1>
         <div className="addEvent__container">
             <ul className="addEvent__list">
-              <li className="addEvent__list-item"><FaBookOpen/> after getting to know each choose a moderator</li>
+              <li className="addEvent__list-item"><FaBookOpen/> after getting to know each other choose a moderator</li>
               <li className="addEvent__list-item"><FaBookOpen/> stay on the same page</li>
               <li className="addEvent__list-item"><FaBookOpen/> remember that the purpose of this club is to read and enjoy yourselves</li>
               <li className="addEvent__list-item"><FaBookOpen/> give your discussions structure</li>

@@ -6,6 +6,7 @@ import Form from './components/Form/Form';
 import Klub from './components/Klub/Klub';
 import Chat from './components/Chat/Chat';
 import About from './components/About/About';
+import Forum from './components/Forum/Forum';
 import './App.css';
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
        <Route path="/klub" component={Klub}></Route>
        <Route path="/chat" component={Chat}></Route>
        <Route path="/about" component={About}></Route>
+       <Route path="/forum" component={Forum}></Route>
     </Switch>
     </Router>
     </div>
